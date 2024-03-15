@@ -1,2 +1,3 @@
 # ifip-wg28.github.io
-IFIP WG 2.8 Website
+
+Place holder for the IFIP WG 2.8 Website
