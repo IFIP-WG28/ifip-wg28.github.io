@@ -28,10 +28,6 @@
   background-color: #E9EDF6; /* IFIP background color */
   font-family: Arial, Helvetica, Geneva, sans-serif;
   text-align: left;
-  -webkit-border-top-left-radius: 1em;
-  -webkit-border-top-right-radius: 1em;
-  -moz-border-radius-topleft: 1em;
-  -moz-border-radius-topright: 1em;
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
   position: fixed;
@@ -117,8 +113,7 @@
   margin: auto;
   padding: 1.25em;
   /* continuation of the layout-banner */
-  -moz-border-radius-bottomright: 1em;
-  -webkit-border-bottom-right-radius: 1em;
+  border-bottom-left-radius: 1em;
   border-bottom-right-radius: 1em;
   /* the following should match the layout-banner values */
   left: 0.5em;
