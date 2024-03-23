@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Asciidoctor 2.0.21">
+  <meta name="keywords" content="IFIP WG 2.8, Functional Programming">
+  <title>IFIP WG2.8 Home</title>
+  <link rel="stylesheet" href="https://ifip-wg28.github.io/styles/wg28-style.css" type="text/css" />
+  <!-- support for latexmath -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      messageStyle: "none",
+      tex2jax: {
+	inlineMath: [["\\(", "\\)"]],
+	displayMath: [["\\[", "\\]"]],
+	ignoreClass: "nostem|nolatexmath"
+      },
+      asciimath2jax: {
+	delimiters: [["\\$", "\\$"]],
+	ignoreClass: "nostem|noasciimath"
+      },
+      TeX: { equationNumbers: { autoNumber: "none" } }
+    })
+    MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+      MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+	if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains('stemblock')) {
+	  data.math.root.display = "block"
+	}
+	return data
+      })
+    })
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</head>
+<body class="article">
+  <div id="layout-top-mask"></div> <!-- to mask scrolled content from below -->
+  <div id="layout-main">
+    <div id="layout-banner-spacer"></div>
+    <div id="layout-banner">
+      <div id="layout-logo">
+        <a href="https://www.ifip.org">
+          <img src="https://www.ifip.org/logo60/logo.jpg" height="120" alt="IFIP logo" />
+        </a>
+      </div> <!-- layout-logo -->
+      <div id="layout-title">
+	<div id="layout-title-main"><a href="https://ifip-wg28.github.io/index.html">WG2.8 on Functional Programming</a></div>
+	<div id="layout-title-description">Home</div>
+      </div> <!-- layout-title -->
+      <!-- menubar for top-level pages -->
+      <div id="access" role="navigation">
+          <div class="menu-header">
+              <ul id="menu-bar" class="menu">
+                  <li id="menu-item-home" class="menu-item current-menu-item">
+                      <a href="index.html">Home</a>
+                  </li>
+                  <li id="menu-item-members" class="menu-item">
+                      <a href="members.html">Members</a>
+                  </li>
+                  <li id="menu-item-meetings" class="menu-item">
+                      <a href="meetings.html">Meetings</a>
+                  </li>
+              </ul>
+          </div>
+      </div> <!-- #access -->
+    </div> <!-- layout-banner -->
+    <div class="clearer"></div>
+    <div id="layout-content-box">
+      <div id="content">
+<div class="sect1">
+<h2 id="_about">About</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The purpose of the <a href="http://www.ifip.org"><strong>IFIP</strong></a> <strong>Working Group 2.8&#8201;&#8212;&#8201;Functional Programming</strong> (part of <a href="http://www.ifip.org/ifiptc2/">Technical Committee 2</a>)
+is to encourage the exchange of information between researchers in the design,
+implementation, and use of functional programming languages.</p>
+</div>
+<div class="paragraph">
+<p>Topics within the scope of the working group include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Semantic theories for functional languages</p>
+</li>
+<li>
+<p>Specification and correctness for functional programs</p>
+</li>
+<li>
+<p>Data and demand driven execution models</p>
+</li>
+<li>
+<p>Programming with higher-order functions</p>
+</li>
+<li>
+<p>Functional approaches to input-output and persistent memory</p>
+</li>
+<li>
+<p>Type systems for functional languages</p>
+</li>
+<li>
+<p>Functional program transformations</p>
+</li>
+<li>
+<p>Programming systems based on functional languages</p>
+</li>
+<li>
+<p>Novel architectures for functional programming systems</p>
+</li>
+<li>
+<p>Implementations based on combinator graph reduction</p>
+</li>
+<li>
+<p>Multiple processor implementations</p>
+</li>
+<li>
+<p>Programming styles and techniques appropriate for functional languages</p>
+</li>
+<li>
+<p>Applications and experience with functional languages</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+      </div> <!-- content -->
+    </div> <!-- layout-content-box -->
+    <div id="layout-footer-box">
+      <div id="layout-footer">
+	<div id="layout-footer-text">
+	  <strong>IFIP WG2.8 on Functional Programming</strong><br />
+	  Last updated 2024-03-22 21:56:29 UTC
+	</div> <!-- layout-footer-text -->
+      </div> <!-- layout-footer -->
+    </div> <!-- layout-footer-box -->
+  </div> <!-- layout-main -->
+</body>
+</html>
