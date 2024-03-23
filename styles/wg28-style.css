@@ -1,0 +1,162 @@
+@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";
+@import "https://cdn.jsdelivr.net/gh/asciidoctor/asciidoctor@2.0/data/stylesheets/asciidoctor-default.css";
+
+#layout-top-mask {  /* masks out scrolling material */
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 2em;
+  width: 100%;
+  background-color: #fff;
+  z-index: 5;
+}
+
+#layout-main {
+  margin: 0.5em 0.5em 0.5em 0.5em;
+}
+
+#layout-banner-spacer {
+  position: relative;
+  width: 100%;
+  height: 14em;
+  clear: both;
+}
+
+#layout-banner {
+  margin: 0;
+  padding: 1.25em;
+  background-color: #E9EDF6; /* IFIP background color */
+  font-family: Arial, Helvetica, Geneva, sans-serif;
+  text-align: left;
+  -webkit-border-top-left-radius: 1em;
+  -webkit-border-top-right-radius: 1em;
+  -moz-border-radius-topleft: 1em;
+  -moz-border-radius-topright: 1em;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  position: fixed;
+  top: 0.5em;  /* should match layout-main margin */
+  left: 0.5em;
+  right: 0.5em;
+  z-index: 10;
+}
+
+#layout-title {
+  height: 7.5em;
+  color: #0a4596; /* color picked to match "IFIP" in logo */
+}
+
+#layout-title-main {
+  font-size: 3.6em;
+  margin: 0 0 10px;
+  color: inherit;
+}
+
+#layout-title-main a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#layout-title-description {
+  font-size: 2.4em;
+  margin: 0;
+  color: inherit;
+}
+
+#layout-title-description code {
+  color: inherit;
+  background-color: inherit;
+}
+
+#layout-logo {
+  height: 7.5em;
+  float: left;
+/*  width: 14em;*/
+  margin-right: 1em;
+}
+
+#layout-logo img {
+  height: 7.5em;
+  max-width: none;
+}
+
+#layout-content-box {
+  color: #2A5D88;
+  margin-left: 0em;
+  z-index: 0;
+}
+
+#layout-footer-box {
+  margin-left: 0em;
+  margin-top: 4.0em;
+  padding-left: 1.0em;
+  padding-right: 0.4em;
+  padding-top: 0.5em;
+}
+
+#layout-footer {
+  border-top: 2px solid #0a4596; /* color picked to match "IFIP" in logo */
+}
+
+#layout-footer-text {
+  float: left;
+  font-size: 0.8em;
+  padding-top: 0.2em;
+  padding-bottom: 0.5em;
+  border-bottom: 2px solid #0a4596; /* color picked to match "IFIP" in logo */
+  margin-bottom: 1em;
+}
+
+#access {
+  position: fixed;
+  background-color: #E9EDF6; /* IFIP background color */
+  color: #0a4596; /* color picked to match "IFIP" in logo */
+  display: block;
+  float: left;
+  height: 5.25em;
+  margin: auto;
+  padding: 1.25em;
+  /* continuation of the layout-banner */
+  -moz-border-radius-bottomright: 1em;
+  -webkit-border-bottom-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  /* the following should match the layout-banner values */
+  left: 0.5em;
+  right: 0.5em;
+  z-index: 10;
+}
+#access ul {
+  font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  text-transform: uppercase;
+}
+#access li {
+  float: left;
+  position: relative;
+}
+#access a {
+  color: #0a4596; /* color picked to match "IFIP" in logo */
+  display: block;
+  line-height: 2em;
+  margin: 0 1px 0 0;
+  padding: 0.25em 1em 0;
+  text-decoration: none;
+}
+#access .current-menu-item a {
+  background: #0a4596; /* color picked to match "IFIP" in logo */
+  color: #fff;
+}
+
+#content
+h1,h2,h3 {
+  font-weight: bold;
+  color: #0a4596; /* color picked to match "IFIP" in logo */
+}
+
+.clearer {
+  clear: both;
+}
