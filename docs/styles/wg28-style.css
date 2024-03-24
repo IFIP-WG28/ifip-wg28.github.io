@@ -155,3 +155,29 @@ h1,h2,h3 {
 .clearer {
   clear: both;
 }
+
+/* styling for lists of talks */
+div.talks li {
+  margin-bottom: 1.5em;
+}
+
+div.talks p:first-child {
+  margin-left: 0em;
+}
+
+div.talks p {
+  margin-left: 1.25em;
+}
+
+div.talks details { /* used for the abstract */
+  margin-left: 2.5em;
+  margin-bottom: 0em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  padding-left: .25em;
+}
+
+div.talks details>summary {
+  padding-bottom: 0em;
+}
+
