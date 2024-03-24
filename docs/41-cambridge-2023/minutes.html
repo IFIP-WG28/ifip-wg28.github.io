@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Asciidoctor 2.0.21">
+  <meta name="keywords" content="IFIP WG 2.8, Functional Programming">
+  <title>IFIP WG2.8 Cambridge, England, UK &ndash; April 17-21, 2023</title>
+  <link rel="stylesheet" href="https://ifip-wg28.github.iostyles/wg28-style.css" type="text/css" />
+  <!-- support for latexmath -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      messageStyle: "none",
+      tex2jax: {
+	inlineMath: [["\\(", "\\)"]],
+	displayMath: [["\\[", "\\]"]],
+	ignoreClass: "nostem|nolatexmath"
+      },
+      asciimath2jax: {
+	delimiters: [["\\$", "\\$"]],
+	ignoreClass: "nostem|noasciimath"
+      },
+      TeX: { equationNumbers: { autoNumber: "none" } }
+    })
+    MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+      MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+	if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains('stemblock')) {
+	  data.math.root.display = "block"
+	}
+	return data
+      })
+    })
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</head>
+<body class="article">
+  <div id="layout-top-mask"></div> <!-- to mask scrolled content from below -->
+  <div id="layout-main">
+    <div id="layout-banner-spacer"></div>
+    <div id="layout-banner">
+      <div id="layout-logo">
+        <a href="https://www.ifip.org">
+          <img src="https://www.ifip.org/logo60/logo.jpg" height="120" alt="IFIP logo" />
+        </a>
+      </div> <!-- layout-logo -->
+      <div id="layout-title">
+	<div id="layout-title-main"><a href="https://ifip-wg28.github.ioindex.html">WG2.8 on Functional Programming</a></div>
+	<div id="layout-title-description">Cambridge, England, UK &ndash; April 17-21, 2023</div>
+      </div> <!-- layout-title -->
+      <div id="access" role="navigation">
+          <div class="menu-header">
+              <ul id="menu-bar" class="menu">
+                  <li id="menu-item-home" class="menu-item">
+                      <a href="https://ifip-wg28.github.io/index.html">Home</a>
+                  </li>
+                  <li id="menu-item-home" class="menu-item">
+                      <a href="../members.html">Members</a>
+                  </li>
+                  <li id="menu-item-meetings" class="menu-item">
+                      <a href="../meetings.html">Meetings</a>
+                  </li>
+                  <li id="menu-item-location" class="menu-item">
+                      <a href="./index.html">About</a>
+                  </li>
+                  <li id="menu-item-attendees" class="menu-item">
+                      <a href="./attendees.html">Attendees</a>
+                  </li>
+                  <li id="menu-item-minutes" class="menu-item current-menu-item">
+                      <a href="./minutes.html">Technical Presentations</a>
+                  </li>
+              </ul>
+          </div>
+      </div> <!-- #access -->
+    </div> <!-- layout-banner -->
+    <div class="clearer"></div>
+    <div id="layout-content-box">
+      <div id="content">
+<div class="sect1">
+<h2 id="_technical_presentations">Technical Presentations</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_monday">Monday</h3>
+<div class="openblock unstyled talks">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://pauillac.inria.fr/~fpottier"><strong>François Pottier:</strong></a> <em>An Ample-Step Semantics for (a fragment of) OCaml</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>I would like to present ongoing work on the design and implementation
+of a formal semantics, inside Coq, for a fragment of OCaml. This
+semantics is expressed in a style that is a hybrid between two
+classic styles of semantics, namely (big-step) monadic interpreters
+and (small-step) reduction semantics. Monadic interpreters are attractive
+because they are easy to write and understand and they are executable
+(inside Coq). Reduction semantics are attractive because they support
+side effects (such as divergence, non-determinism, mutable state,
+parallelism, concurrency) more easily. So far, the semantics supports a
+small fragment of OCaml and I have constructed a sound Hoare logic for it.
+Ongoing work includes growing this language fragment and scaling up from
+Hoare logic to a modern separation logic (namely, Iris).</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><a href="https://homepages.inf.ed.ac.uk/wadler"><strong>Philip Wadler:</strong></a> <em>Explicit Weakening</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>We present a novel formulation of substitution, inspired by the explicit
+substitutions of Abadi, Cardelli, Curien, and Levy (1991). In their
+formulation, substitutions are constructed with four operations and
+substitution is an explicit operator on terms.  In our formulation,
+substitution are constructed with three operations and weakening is an
+explicit operator on terms, while substitution becomes a meta operation.
+The advantage of our formulation is that facts about substitution that
+previously required tens or hundreds of lines justify in a proof assistant
+now follow immediately---they can be justified by writing the four letters
+"refl".</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><strong>Anil Madhavapeddy:</strong> <em>eioio&#8201;&#8212;&#8201;using effect handlers to go post-POSIX</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>We&#8217;ve recently introduced effect handlers in OCaml 5.0.  I&#8217;ll talk about
+how we&#8217;ve been using them to build a new direct-style IO library that makes
+it really simple to build high performance applications in a classic ML
+style (no monads!). Some unexpected discoveries along the way: we found a
+good use for objects to enforce capabilities, and also that modern kernel
+interfaces for IO heavily depend on batching and shared memory communication
+(on macOS, Linux and Windows), and that just one effect type might be all
+we need to build everything on top of that.</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><a href="https://raintown.org"><strong>Satnam Singh:</strong></a> <em>Silver Oak: Hardware Software Co-Design and Co-Verification in Coq</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>This talk describes the specification, implementation and formal verification
+inside the Coq theorem prover of the software and hardware components of
+the AES crypto accelerator component of the OpenTitan silicon roof of
+trust. We have developed a Lava-like domain specific hardware description
+language called Cava in Coq’s Gallina language which is designed to help
+describe low level data-path style circuits with a view to having tight
+control over resource utilization and performance. This allows us to
+specify, implement and formally verify high assurance systems in one model
+where specifications are plain Gallina functions that specify the desired
+behaviour of hardware components. Our system can extract circuit descriptions
+from our Coq DSL to SystemVerilog for implementation on FPGA circuits.</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><a href="http://adam.chlipala.net"><strong>Adam Chlipala:</strong></a> <em>An Application Language for a Formally Verified System Stack</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>This talk is about the start of my effort to combine two lines of work,
+on the Ur/Web functional DSL for web programming and on complete
+hardware-software stacks with Coq proofs.  The former has never had proofs,
+and the latter has always been a pain to write applications for.  As a
+result, our team has been developing a new application-programming language
+for our verified stack, inspired by Ur/Web but with a verified compiler.
+We are started targeting web services with persistent databases, which we
+want to run in the end as bare-metal software on microcontrollers.  Various
+restrictions in the new language I justify to my students with "no, that
+feature of Haskell, etc. isn&#8217;t especially relevant to the great majority
+of real-world software," so I will appreciate your agreements and
+disagreements with different ones.  However, central to the design are two
+features that mainstream languages borrowed from functional programming:
+comprehensions and streams.</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><a href="https://users.cs.northwestern.edu/~robby"><strong>Robby Findler:</strong></a> <em>Esterel in Racket</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Concurrency and thread preemption can make programs more modular.
+Unfortunately, in conventional programming models, combining state and
+concurrency (to say nothing of preemption!) makes programs extremely hard
+to reason about. Esterel offers a different programming model that is
+designed such that concurrency, state change, and thread preemption can
+all be used harmoniously. It dates to the 1980s and is the brainchild of
+Gérard Berry.</p>
+</div>
+<div class="paragraph">
+<p>I have been working on a new implementation technique for
+Esterel that integrates more seamlessly with a conventional programming
+language. I&#8217;ll try to use examples to make some sense out of what&#8217;s written
+in the previous paragraph and, more generally, give a demo of this new
+implementation. If we have time, I&#8217;ll try to explain how the implementation
+actually works and achieves this better form of integration.</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><a href="https://cseweb.ucsd.edu/~npolikarpova"><strong>Nadia Polikarpova:</strong></a> <em>Live Exploration of AI-Generated Programs (DEMO)</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>AI-powered programming assistants are increasingly gaining popularity, but
+they are far from perfect, producing code suggestions that may be incorrect
+or incomplete in subtle ways. As a result, developers face a new set of
+challenges when they need to understand, validate, and choose between AI&#8217;s
+suggestions. In this short demo, I will show how Live Programming, a
+continuous display of a program&#8217;s runtime values, could help address these
+challenges.</p>
+</div>
+</div>
+</details>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tuesday">Tuesday</h3>
+<div class="openblock unstyled talks">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Andreas Rossberg:</strong> <em>Putting Wasm in Control with Effect Handlers</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>WebAssembly (Wasm) is a standardised low-level portable code format that
+is intended as a compilation target for a wide variety of source languages.
+However, Wasm itself provides no direct support for non-local control flow,
+although many languages offer non-local control flow features such as
+async/await, generators/iterators, lightweight threads, first-class
+continuations, etc. This means that compilers must ceremoniously transform
+entire source programs in order to implement their non-local control flow
+features in Wasm.</p>
+</div>
+<div class="paragraph">
+<p>We present WasmFX, which addresses this shortcoming by
+bringing effect handlers to Wasm. Although originally conceived in the
+world of high-level languages, WasmFX adapts effect handlers to the low-level
+setting of Wasm, in which closures or garbage collection are not available.
+It thereby extends Wasm with structured "stack switching", enabling
+compilers to translate non-local control flow abstractions directly into
+Wasm. The extension is type-safe and minimal, adding only six new instructions.
+We have implemented WasmFX as an extension to the Wasm reference interpreter
+and in Wasmtime, a production Wasm engine. Our experiments show that our
+design can be implemented efficiently and outperforms the current
+state-of-the-art for compiling non-local control flow to Wasm.</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><a href="https://www.ccs.neu.edu/home/amal"><strong>Amal Ahmed:</strong></a> <em>RichWasm: Bringing Shared Memory Interoperability to WebAssembly</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Though WebAssembly provides a safe, sandboxed environment for programs to
+run in, it lacks the facilities to enable safe, shared-memory interoperability
+between Wasm modules, a feature that we believe is essential for a low-level
+language in a multi-language world. I&#8217;ll present RichWasm, a higher-level
+version of WebAssembly with an enriched capability-based type system to
+support fine-grained type-safe shared-memory interoperability. RichWasm
+is rich enough to serve as a typed compilation target for both typed
+garbage-collected languages and languages with an ownership-based type
+system and manually managed memory. RichWasm takes inspiration from earlier
+work on languages with linear capability types to support safe strong
+updates, and adds analogous unrestricted capability types for garbage-collected
+locations, allowing a module to provide fine-grained memory access to
+another module, regardless of memory-management strategy. RichWasm types
+are not intended to be made part of core Wasm; instead we compile RichWasm
+to core Wasm, allowing for use in existing environments. We have formalized
+RichWasm in Coq and are currently proving its safety via progress and
+preservation.</p>
+</div>
+<div class="paragraph">
+<p>Joint work with:</p>
+</div>
+<div class="paragraph">
+<p>+
+Michael Fitzgibbons, Zoe Parakevopoulou,
+Michelle Thalakottur, Noble Mushtak, Jose Sulaiman Manzur</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><strong>Stephen Dolan:</strong> <em>Rethinking the Value Restriction</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>There is a well-known unsoundness that crops up when the Hindley-Milner
+type system is extended with mutable references.\nThe most widely-used fix
+for the issue is the "value restriction", which solves the problem in
+an easy-to-specify, easy-to-implement way.  However, the solution relies
+upon a side condition of "syntactic value", which can be confusing.\nIn
+this talk, I&#8217;ll explain how the standard formulation of the value restriction
+relies on some conventional assumptions about the Hindley-Milner type
+system, and that these assumptions are in fact not true in the presence
+of mutable references. By rethinking these assumptions, we&#8217;ll end up with
+a version of ML that generalises at lambda rather than let, types strictly
+more programs than conventional ML with the value restriction, and needs
+no "syntactic value" side-conditions."</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><a href="https://simon.peytonjones.org"><strong>Simon Peyton-Jones:</strong></a> <em>A denotational semantics for Verse</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>I have seen a denotational semantics for a functional logic language.  We
+have developed sketch denotational semantics for Verse; I&#8217;d like to present
+them incite a disucssion.</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><strong>Richard Eisenberg:</strong> <em>Abstract Templates</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>OCaml has been jealous of Haskell&#8217;s unboxed types for years (at least
+within Jane Street): unboxed types allow for fewer allocations and
+indirections, leading to less pressure on the garbage collector and less
+pointer-chasing. But unboxed types&#8201;&#8212;&#8201;where we lose the ability to have a
+uniform representation&#8201;&#8212;&#8201;struggle with polymorphism. This talk describes
+the approach we&#8217;re imagining to overcome this problem, where
+representation-flexible functions (not "polymorphic", as we&#8217;ll discuss)
+get inlined at compile time in order to fix variable representations. The
+challenge is in being able to put such functions in module signatures, a
+challenge we expect to overcome by tracking which computations can be
+completed at compile time. This talk will present early-stage work-in-progress.</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><a href="https://www.cis.upenn.edu/~sweirich"><strong>Stephanie Weirich:</strong></a> <em>Stratified Type Theory</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Work in progress: Stratified Type Theory is a new(?) way to enforce
+predicativity in a dependent type system.</p>
+</div>
+</div>
+</details>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_wednesday">Wednesday</h3>
+<div class="openblock unstyled talks">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Simon Marlow:</strong> <em>Glean: Facts about Code</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Tools that developers use often need semantic information about the code
+they&#8217;re working with: navigating from a symbol to its definition in an
+IDE, for example. But codebases are getting larger and indexing all the
+code in the IDE (for example) is becoming impractical. Glean is a system
+we&#8217;re building at Meta for indexing source code at scale, providing a rich
+and general-purpose query language that sits somewhere in the Datalog-like
+design space of query languages. For this talk I want to focus on the
+design of the query language, as it has a number of interesting open
+questions and alternatives.</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><strong>Nick Benton:</strong> <em>Semantics of Hack&#8217;s Sound Dynamic Type</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>We have recently extended Meta&#8217;s Hack language with a dynamic type that
+allows the sound coexistence of statically and dynamically typed code.
+I&#8217;ll describe a semantic interpretation of Hack types using step-indexed
+logical predicates and a soundness theorem that has been formalised in Coq
+using the Iris library.</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><a href="http://justtesting.org"><strong>Manuel Chakravarty:</strong></a> <em>Functional programming in a concurrent transactional world</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>The smart contract framework of the Cardano blockchain has been designed
+with the principles of functional programming in mind, such as determinism
+and a formally defined semantics. Nevertheless, the concurrent and
+transactional nature of blockchains makes it hard to (formally) reason
+about properties of smart contracts. After all, we need to achieve planet-wide
+distributed consensus on all computation between all involved actors.\nIn
+this talk, I will define a class of contracts that can be described as
+augmented automata and that admit simple relational and functional
+specifications. Moreover, I will outline how I think we might define
+classical notions of liveness and safety of concurrent systems on the basis
+of these specifications. Finally, if time permits, I will sketch how we
+might relate all this to the framework of Constructive Cryptography —- a
+relatively new approach that was proposed to support compositional reasoning
+about cryptographic protocols.</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><a href="https://ranjitjhala.github.io"><strong>Ranjit Jhala:</strong></a> <em>Flux: Refinement Types for Rust</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Refinement Types can make verification ergonomic by using syntactic typing
+to decompose quantified assertions into SMT-solver friendly quantifier-free
+refinements. For the most part, however, these benefits have been limited
+to pure functions due to the hassle of reconciling value-dependent refinements
+with imperative updates, references and aliasing. We introduce FLUX, which
+shows how logical refinements can work hand-in-glove with Rust&#8217;s ownership
+mechanisms to yield type-based verification of impure code. FLUX introduces
+a new refined type system for Rust that indexes mutable locations, with
+pure values that can appear in refinements, and exploits Rust&#8217;s ownership
+mechanisms to abstract sub-structural reasoning about locations within
+Rust&#8217;s polymorphic type constructors. We use a benchmark suite of vector
+manipulating programs and a previously verified secure sandboxing library
+to demonstrate the advantages of refinement types over (Floyd-Hoare style)
+program logics as implemented in the state-of-the-art Prusti verifier.</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><a href="https://cseweb.ucsd.edu/~npolikarpova"><strong>Nadia Polikarpova:</strong></a> <em>Leveraging Rust Types for Program Synthesis</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>In this talk, I will present RusSOL, the first synthesizer for
+correct-by-construction programs in safe Rust. The key ingredient of our
+synthesis procedure is Synthetic Ownership Logic, a new program logic for
+deriving programs that are guaranteed to satisfy both a user-provided
+functional specification and, importantly, Rust&#8217;s intricate type system.</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><a href="https://www.cis.upenn.edu/~bcpierce"><strong>Benjamin Pierce:</strong></a> <em>Stream Types</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Stream processing languages present some fascinating new challenges for
+type-system design.  I&#8217;ll describe a new type system based on a logic with
+two kinds of conjunction (like separation logic, except that the separation
+is in time, not space) and a semantics based on partially ordered multistep.</p>
+</div>
+</div>
+</details>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_thursday">Thursday</h3>
+<div class="openblock unstyled talks">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Andrew Kennedy:</strong> <em>On Not Porting a Type-checker to Rust</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+</li>
+<li>
+<p><a href="http://adam.chlipala.net"><strong>Adam Chlipala:</strong></a> <em>DEMO</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.mpi-sws.org/~dreyer"><strong>Derek Dreyer:</strong></a> <em>Semantics in Iris</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+</li>
+<li>
+<p><strong>Claudio Russo:</strong> <em>Motoko&#8217;s Scoped Futures</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Motoko&#8217;s uses futures and async/await for asynchronous communications, but
+due to restrictions of the underlying platform, must tame their use. I&#8217;ll
+describe the problem and our current, type-based solution.</p>
+</div>
+</div>
+</details>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_friday">Friday</h3>
+<div class="openblock unstyled talks">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.informatik.uni-freiburg.de/~thiemann"><strong>Peter Thiemann:</strong></a> <em>Polymorphic Typestate for Session Types</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Session types provide a principled approach to typed communication protocols
+that guarantee type safety and protocol fidelity. Formalizations of
+session-typed communication are typically based on process calculi,
+concurrent lambda calculi, or linear logic. An alternative model based on
+context-sensitive typing and typestate has not received much attention due
+to its apparent restrictions. However, this model is attractive because
+it does not force programmers into particular patterns like continuation-passing
+style or channel-passing style, but rather enables them to treat communication
+channels like mutable  variables.</p>
+</div>
+<div class="paragraph">
+<p>Polymorphic typestate is the key that enables a full treatment of session-typed
+communication. Previous work in this direction was hampered by its setting
+in a simply-typed lambda calculus.  We show that higher-order polymorphism
+and existential types enable us to lift the restrictions imposed by previous
+work, thus bringing the expressivity of the typestate-based approach on
+par with the competition. To this end, we define PolyVGR, the system of
+polymorphic typestate for session types, establish its basic metatheory,
+type preservation and progress, and present a prototype implementation.</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><strong>David Turner :</strong> <em>Open Sourcing Miranda</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Miranda is a lazy, polymorphically typed, purely functional language which
+I designed in early 80&#8217;s with releases in 1985, 1987 and 1989. It was quite
+widely used and a precursor of Haskell. The code was 32 bit, closed source
+distributed under licence. In this talk I will sketch the process of
+updating the code for modern 64 bit platforms to make it available as open
+source.</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><a href="https://dimitriv.github.io"><strong>Dimitrios Vytiniotis:</strong></a> <em>A Factory for Pipeline Parallelism Schedules</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>I will show work-in-progress to easily derive different schedules for
+pipeline-parallel training neural networks.</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><a href="https://www.cis.upenn.edu/~sweirich"><strong>Stephanie Weirich:</strong></a> <em>CBPV + effects &amp; co-effects</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.cl.cam.ac.uk/~nk480"><strong>Neel Krishnaswami:</strong></a> <em>Actually good parser combinators</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Lexers and parsers are typically defined separately and connected by a
+token stream. This separate definition is important for modularity and
+reduces the potential for parsing ambiguity. However, materializing tokens
+as data structures and case-switching on tokens comes with a cost. We show
+how to fuse separately-defined lexers and parsers, drastically improving
+performance without compromising modularity or increasing ambiguity.  Our
+staged parser combinator library, flap, provides a standard interface, but
+generates specialized token-free code that runs two to six times faster
+than ocamlyacc on a range of benchmarks.</p>
+</div>
+</div>
+</details>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+      </div> <!-- content -->
+    </div> <!-- layout-content-box -->
+    <div id="layout-footer-box">
+      <div id="layout-footer">
+	<div id="layout-footer-text">
+	  <strong>IFIP WG2.8 on Functional Programming</strong><br />
+	  Last updated 2024-03-24 21:11:58 UTC
+	</div> <!-- layout-footer-text -->
+      </div> <!-- layout-footer -->
+    </div> <!-- layout-footer-box -->
+  </div> <!-- layout-main -->
+</body>
+</html>

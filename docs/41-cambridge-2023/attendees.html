@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Asciidoctor 2.0.21">
+  <meta name="keywords" content="IFIP WG 2.8, Functional Programming">
+  <title>IFIP WG2.8 Cambridge, England, UK &ndash; April 17-21, 2023</title>
+  <link rel="stylesheet" href="https://ifip-wg28.github.iostyles/wg28-style.css" type="text/css" />
+  <!-- support for latexmath -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      messageStyle: "none",
+      tex2jax: {
+	inlineMath: [["\\(", "\\)"]],
+	displayMath: [["\\[", "\\]"]],
+	ignoreClass: "nostem|nolatexmath"
+      },
+      asciimath2jax: {
+	delimiters: [["\\$", "\\$"]],
+	ignoreClass: "nostem|noasciimath"
+      },
+      TeX: { equationNumbers: { autoNumber: "none" } }
+    })
+    MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+      MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+	if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains('stemblock')) {
+	  data.math.root.display = "block"
+	}
+	return data
+      })
+    })
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</head>
+<body class="article">
+  <div id="layout-top-mask"></div> <!-- to mask scrolled content from below -->
+  <div id="layout-main">
+    <div id="layout-banner-spacer"></div>
+    <div id="layout-banner">
+      <div id="layout-logo">
+        <a href="https://www.ifip.org">
+          <img src="https://www.ifip.org/logo60/logo.jpg" height="120" alt="IFIP logo" />
+        </a>
+      </div> <!-- layout-logo -->
+      <div id="layout-title">
+	<div id="layout-title-main"><a href="https://ifip-wg28.github.ioindex.html">WG2.8 on Functional Programming</a></div>
+	<div id="layout-title-description">Cambridge, England, UK &ndash; April 17-21, 2023</div>
+      </div> <!-- layout-title -->
+      <div id="access" role="navigation">
+          <div class="menu-header">
+              <ul id="menu-bar" class="menu">
+                  <li id="menu-item-home" class="menu-item">
+                      <a href="https://ifip-wg28.github.io/index.html">Home</a>
+                  </li>
+                  <li id="menu-item-home" class="menu-item">
+                      <a href="../members.html">Members</a>
+                  </li>
+                  <li id="menu-item-meetings" class="menu-item">
+                      <a href="../meetings.html">Meetings</a>
+                  </li>
+                  <li id="menu-item-location" class="menu-item">
+                      <a href="./index.html">About</a>
+                  </li>
+                  <li id="menu-item-attendees" class="menu-item current-menu-item">
+                      <a href="./attendees.html">Attendees</a>
+                  </li>
+                  <li id="menu-item-minutes" class="menu-item">
+                      <a href="./minutes.html">Technical Presentations</a>
+                  </li>
+              </ul>
+          </div>
+      </div> <!-- #access -->
+    </div> <!-- layout-banner -->
+    <div class="clearer"></div>
+    <div id="layout-content-box">
+      <div id="content">
+<div class="sect1">
+<h2 id="_attendees">Attendees</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_members">Members</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.ccs.neu.edu/home/amal">Amal Ahmed</a></p>
+</li>
+<li>
+<p><a href="http://justtesting.org">Manuel Chakravarty</a></p>
+</li>
+<li>
+<p><a href="http://adam.chlipala.net">Adam Chlipala</a></p>
+</li>
+<li>
+<p>Richard Eisenberg</p>
+</li>
+<li>
+<p><a href="https://users.cs.northwestern.edu/~robby">Robby Findler</a></p>
+</li>
+<li>
+<p><a href="https://cs.ubc.ca/~rxg">Ronald Garcia</a></p>
+</li>
+<li>
+<p><a href="https://www.cse.chalmers.se/~rjmh">John Hughes</a></p>
+</li>
+<li>
+<p>Andrew Kennedy</p>
+</li>
+<li>
+<p><a href="https://www.cl.cam.ac.uk/~nk480">Neel Krishnaswami</a></p>
+</li>
+<li>
+<p>Simon Marlow</p>
+</li>
+<li>
+<p><a href="https://www.bluespec.com">Rishiyur Nikhil</a></p>
+</li>
+<li>
+<p><a href="https://simon.peytonjones.org">Simon Peyton-Jones</a></p>
+</li>
+<li>
+<p><a href="https://www.cis.upenn.edu/~bcpierce">Benjamin Pierce</a></p>
+</li>
+<li>
+<p><a href="https://cseweb.ucsd.edu/~npolikarpova">Nadia Polikarpova</a></p>
+</li>
+<li>
+<p><a href="https://pauillac.inria.fr/~fpottier">François Pottier</a></p>
+</li>
+<li>
+<p><a href="https://cs.uchicago.edu/~jhr">John Reppy</a></p>
+</li>
+<li>
+<p><a href="https://pauillac.inria.fr/~remy">Didier Rémy</a></p>
+</li>
+<li>
+<p><a href="https://www.cs.chalmers.se/~ms">Mary Sheeran</a></p>
+</li>
+<li>
+<p><a href="https://raintown.org">Satnam Singh</a></p>
+</li>
+<li>
+<p><a href="https://www.informatik.uni-freiburg.de/~thiemann">Peter Thiemann</a></p>
+</li>
+<li>
+<p><a href="https://www.cs.kent.ac.uk/people/staff/dat">David Turner</a></p>
+</li>
+<li>
+<p><a href="https://dimitriv.github.io">Dimitrios Vytiniotis</a></p>
+</li>
+<li>
+<p><a href="https://homepages.inf.ed.ac.uk/wadler">Philip Wadler</a></p>
+</li>
+<li>
+<p><a href="https://www.cis.upenn.edu/~sweirich">Stephanie Weirich</a></p>
+</li>
+<li>
+<p><a href="https://www.cis.upenn.edu/~stevez">Steve Zdancewic</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_guests">Guests</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Anil Madhavapeddy</p>
+</li>
+<li>
+<p>Nick Benton</p>
+</li>
+<li>
+<p>Stephen Dolan</p>
+</li>
+<li>
+<p>Ranjit Jhala</p>
+</li>
+<li>
+<p>Andreas Rossberg</p>
+</li>
+<li>
+<p>Claudio Russo</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+      </div> <!-- content -->
+    </div> <!-- layout-content-box -->
+    <div id="layout-footer-box">
+      <div id="layout-footer">
+	<div id="layout-footer-text">
+	  <strong>IFIP WG2.8 on Functional Programming</strong><br />
+	  Last updated 2024-03-24 21:11:58 UTC
+	</div> <!-- layout-footer-text -->
+      </div> <!-- layout-footer -->
+    </div> <!-- layout-footer-box -->
+  </div> <!-- layout-main -->
+</body>
+</html>
