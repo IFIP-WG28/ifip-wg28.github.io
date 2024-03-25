@@ -156,6 +156,14 @@ h1,h2,h3 {
   clear: both;
 }
 
+/* styling for member list */
+#_current_members p {
+  color: #2A5D88;
+}
+#_current_members a {
+  color: #2A5D88;
+}
+
 /* styling for lists of talks */
 div.talks li {
   margin-bottom: 1.5em;
