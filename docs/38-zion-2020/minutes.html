@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Asciidoctor 2.0.21">
+  <meta name="keywords" content="IFIP WG 2.8, Functional Programming">
+  <title>IFIP WG2.8 WG 2.8 Meeting 38</title>
+  <link rel="stylesheet" href="https://ifip-wg28.github.io/styles/wg28-style.css" type="text/css" />
+  <!-- support for latexmath -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      messageStyle: "none",
+      tex2jax: {
+	inlineMath: [["\\(", "\\)"]],
+	displayMath: [["\\[", "\\]"]],
+	ignoreClass: "nostem|nolatexmath"
+      },
+      asciimath2jax: {
+	delimiters: [["\\$", "\\$"]],
+	ignoreClass: "nostem|noasciimath"
+      },
+      TeX: { equationNumbers: { autoNumber: "none" } }
+    })
+    MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+      MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+	if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains('stemblock')) {
+	  data.math.root.display = "block"
+	}
+	return data
+      })
+    })
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</head>
+<body class="article">
+  <div id="layout-top-mask"></div> <!-- to mask scrolled content from below -->
+  <div id="layout-main">
+    <div id="layout-banner-spacer"></div>
+    <div id="layout-banner">
+      <div id="layout-logo">
+        <a href="https://www.ifip.org">
+          <img src="https://www.ifip.org/logo60/logo.jpg" height="120" alt="IFIP logo" />
+        </a>
+      </div> <!-- layout-logo -->
+      <div id="layout-title">
+	<div id="layout-title-main"><a href="https://ifip-wg28.github.io/index.html">WG2.8 on Functional Programming</a></div>
+	<div id="layout-title-description">Zion National Park, UT, USA &ndash; March 8-13, 2020</div>
+      </div> <!-- layout-title -->
+      <div id="access" role="navigation">
+          <div class="menu-header">
+              <ul id="menu-bar" class="menu">
+                  <li id="menu-item-home" class="menu-item">
+                      <a href="https://ifip-wg28.github.io/index.html">Home</a>
+                  </li>
+                  <li id="menu-item-home" class="menu-item">
+                      <a href="https://ifip-wg28.github.io/members.html">Members</a>
+                  </li>
+                  <li id="menu-item-meetings" class="menu-item">
+                      <a href="https://ifip-wg28.github.io/meetings.html">Meetings</a>
+                  </li>
+                  <li id="menu-item-location" class="menu-item">
+                      <a href="index.html">About</a>
+                  </li>
+                  <li id="menu-item-attendees" class="menu-item">
+                      <a href="attendees.html">Attendees</a>
+                  </li>
+                  <li id="menu-item-minutes" class="menu-item current-menu-item">
+                      <a href="minutes.html">Technical Presentations</a>
+                  </li>
+              </ul>
+          </div>
+      </div> <!-- #access -->
+    </div> <!-- layout-banner -->
+    <div class="clearer"></div>
+    <div id="layout-content-box">
+      <div id="content">
+<div class="sect1">
+<h2 id="_technical_presentations">Technical Presentations</h2>
+<div class="sectionbody">
+<div class="openblock unstyled talks">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Matthew Flatt:</strong> <em>Compiler and Runtime Support for Continuation Marks</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Continuation marks enable dynamic binding and
+context inspection in a language with proper handling of tail calls
+and first-class, multi-prompt, delimited continuations. By exposing
+continuation marks to users of a programming language, more kinds of
+language extensions can be implemented as libraries without further
+changes to the compiler. At the same time, the compiler and runtime
+system must provide an efficient implementation of continuation marks
+to ensure that library-implemented language extensions are as
+effective as changing the compiler. Our implementation of
+continuation marks for Chez Scheme (in support of Racket) makes
+dynamic binding and lookup constant-time and fast, preserves the
+performance of Chez Scheme&#8217;s first-class continuations, and imposes
+negligible overhead on program fragments that do not use first-class
+continuations or marks.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/38-zion-2020/flatt-talk.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.cse.chalmers.se/~rjmh"><strong>John Hughes:</strong></a> <em>How to specify it!</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>I presented a tutorial I have developed on formulating useful properties
+for testing pure functions, using a key-value map implemented as a binary
+search tree as an example. We discussed the material, concluding among
+other things that the idea of using an inefficient implementation as an
+oracle for an optimized implementation deserves a separate mention (I
+treated it as a special case of "model-based" properties), and
+that testing the completeness of generators (not discussed in these slides)
+is more daunting and difficult than the other material. A paper will appear
+in the proceedings of Trends in Functional Programming 2019.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/38-zion-2020/How-to-Specify-it.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://people.cs.uchicago.edu/~dbm"><strong>David MacQueen:</strong></a> <em>Some early ideas about types</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Types first arose implicitly in the work of Frege in the form of the
+"range of significance" of a propositional function.  Then
+Russell&#8217;s Paradox (1901) presented a problem that Russel (1903,1908)
+tried to address with a Ramified Theory of Types in Principia Mathematica.
+This talk addresses these early ideas about types and follows the evolution
+through the Simple Theory of Types (Ramsey, and Hilbert and Ackermann) in
+the 1920s,  Curry theory of "functionality" for combinatory logic
+in the 1930s, and finally to Church&#8217;s simply typed lambda calculus
+of 1940.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/38-zion-2020/early-types-slides.pdf">Slides</a>, <a href="https://wg28.cs.uchicago.edu/38-zion-2020/Early-Ideas-on-Types.pdf">Paper</a></p>
+</div>
+</li>
+<li>
+<p><strong>Jennifer Paykin:</strong> <em>Programming Abstractions for Quantum Computing</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Quantum computing is a new and exciting programming domain that defies our
+intuitions at every turn. However, the underlying mathematical model,
+rooted in linear algebra, is fairly simple to understand. This mathematical
+semantics shows which programming abstractions are allowed and which must
+be rejected, and gives hints to to new programming abstractions that could
+replace them. This talk gives a short overview of the quantum computing
+programming model, and discusses the progression of a few abstractions,
+including functions, dependent types, and control flow.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/38-zion-2020/paykin-talk.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://cseweb.ucsd.edu/~npolikarpova"><strong>Nadia Polikarpova:</strong></a> <em>Liquid Resource Types for Verification and Synthesis</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>This talk presents a type system that combines Liquid Types with potential
+annotations from Automated Amortized Resource Analysis to enable fine-grained
+reasoning about resource consumption. Using Liquid Resource Types we can
+verify, for example, that insertion sort only makes as many steps as there
+are unordered pairs in its input list. We can also use these types in
+conjunctions with type-driven program synthesis to synthesize provably
+efficient programs.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/38-zion-2020/liquid-resource-types.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://cseweb.ucsd.edu/~npolikarpova"><strong>Nadia Polikarpova:</strong></a> <em>Component-Based Synthesis for Haskells</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>This talk is a demo of Hoogle+, a component-based synthesizer for
+Haskell.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/38-zion-2020/hplus.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://cs.uchicago.edu/~jhr"><strong>John Reppy:</strong></a> <em>Shapes and Flattening</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>NESL is a first-order functional language with an apply-to-each construct
+and other parallel primitives that enable the expression of irregular
+nested data-parallel (NDP) algorithms.  To compile NESL, Blelloch and
+others developed a global flattening transformation that maps irregular
+NDP code into regular flat data parallel (FDP) code suitable for executing
+on SIMD or SIMT architectures, such as GPUs.</p>
+</div>
+<div class="paragraph">
+<p>While flattening solves the problem of mapping irregular parallelism into
+a regular model, it requires significant additional optimizations to produce
+performant code.  Nessie is a compiler for NESL that generates CUDA code
+for running on Nvidia GPUs.  The Nessie compiler relies on a fairly
+complicated shape analysis that is performed on the FDP code produced by
+the flattening transformation.  Shape analysis plays a key role in the
+compiler as it is the enabler of fusion optimizations, smart kernel
+scheduling, and other optimizations.</p>
+</div>
+<div class="paragraph">
+<p>In this paper, we present a new approach to the shape analysis problem for
+NESL that is both simpler to implement and provides better quality shape
+information.  The key idea is to analyze the NDP representation of the
+program and then preserve shape information through the flattening
+transformation.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/38-zion-2020/shapes-n-flattening-talk.pdf">Slides</a>, <a href="https://wg28.cs.uchicago.edu/38-zion-2020/shapes-n-flattening-paper.pdf">Paper</a>, <a href="http://nessie.cs.uchicago.edu">Link to website</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://cs.uchicago.edu/~jhr"><strong>John Reppy:</strong></a> <em>Comparing implementations of stacks and continuations</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>The efficient implementation of function calls and non-local control
+transfers is a critical part of modern language implementations and is
+important in the implementation of everything from recursion, higher-order
+functions, concurrency and coroutines, to task-based parallelism.  In a
+compiler, these features can be supported by a variety of mechanisms,
+including call stacks, segmented stacks, and heap-allocated continuation
+closures.</p>
+</div>
+<div class="paragraph">
+<p>An implementor of a high-level language with advanced control features
+might ask the question "what is the best choice for my implementation?"
+Unfortunately, the current literature does not provide much guidance, since
+previous studies suffer from various flaws in methodology and are outdated
+for modern hardware.  In the absence of recent, well-normalized measurements
+and a holistic overview of their implementation specifics, the path of
+least resistance when choosing a strategy is to trust folklore, but the
+folklore is also suspect.</p>
+</div>
+<div class="paragraph">
+<p>This paper attempts to remedy this situation by providing an "apples-to-apples"
+comparison of five different approaches to implementing call stacks and
+continuations. This comparison uses the same source language, compiler
+pipeline, LLVM-backend, and runtime system, with the only differences being
+those required by the differences in implementation strategy.  We compare
+the implementation challenges of the different approaches, their sequential
+performance, and their suitability to support advanced control mechanisms,
+including supporting heavily threaded code. In addition to the comparison
+of implementation strategies, the paper&#8217;s contributions also include a
+number of useful implementation techniques that we discovered along the
+way.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/38-zion-2020/stacks-talk.pdf">Slides</a>, <a href="https://wg28.cs.uchicago.edu/38-zion-2020/stacks-paper.pdf">Paper</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.informatik.uni-freiburg.de/~thiemann"><strong>Peter Thiemann:</strong></a> <em>Duality of Session Types: The Final Cut</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Duality is a central concept in the theory of session types.  Since a  flaw
+was found in the original definition, several other definitions have been
+published. As their connection is not obvious, we compare the competing
+definitions, discuss tradeoffs, and prove some equivalences. Some of the
+results are mechanized in Agda.</p>
+</div>
+<div class="paragraph">
+<p>In collaboration with Simon Gay (U Glasgow) and Vasco Vasconcelos (U
+Lisbon).  To appear in PLACES 2020</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/38-zion-2020/thiemann-talk.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.cs.princeton.edu/~dpw"><strong>David Walker:</strong></a> <em>NV: A platform for modelling and verifying routing protocols</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Network reliability is a key problem in the modern world&#8201;&#8212;&#8201;without it
+we cannot access vital online services.  In this talk, we describe the
+design of NV, a functional language for modeling network routing protocols
+such as OSPF, BGP and ISIS.  NV is relatively simple, containing a set of
+standard data structures such as booleans, fixed-width integers of various
+sizes, records, options, dictionaries and non-recursive functions.  NV
+also includes symbolic variables, which can be used to express unknowns,
+such as failures or announcements from neighboring networks, as well as
+assertions, which may be used to express desirable properties of networks.
+With this well-understood set of primitives, it is possible to encode the
+semantics of a substantial fragment of Cisco&#8217;s and Juniper&#8217;s
+router configurations.  NV has two main back ends that may be used for
+verification of network properties.  The first is an encoding of NV programs
+as SMT constraints.  The second is a simulation engine that will compute
+a solution to the routing system given concrete values in place of symbolic
+ones.  The latter engine uses multi-terminal BDDs to implement dictionaries
+efficiently.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/38-zion-2020/walker-talk.pdf">Slides</a>, <a href="https://github.com/NetworkVerification/nv">Link to website</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.cis.upenn.edu/~sweirich"><strong>Stephanie Weirich:</strong></a> <em>Adventures in Quantitative Type Theory</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>A tutorial on what I&#8217;ve been thinking about Quantitative Type Theory</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/38-zion-2020/w28-qtt-zion.pdf">Slides</a></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+      </div> <!-- content -->
+    </div> <!-- layout-content-box -->
+    <div id="layout-footer-box">
+      <div id="layout-footer">
+	<div id="layout-footer-text">
+	  <strong>IFIP WG2.8 on Functional Programming</strong><br />
+	  Last updated 2024-03-26 01:03:51 UTC
+	</div> <!-- layout-footer-text -->
+      </div> <!-- layout-footer -->
+    </div> <!-- layout-footer-box -->
+  </div> <!-- layout-main -->
+</body>
+</html>
