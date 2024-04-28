@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Asciidoctor 2.0.21">
+  <meta name="keywords" content="IFIP WG 2.8, Functional Programming">
+  <title>IFIP WG2.8 WG 2.8 Meeting 36</title>
+  <link rel="stylesheet" href="https://ifip-wg28.github.io/styles/wg28-style.css" type="text/css" />
+  <!-- support for latexmath -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      messageStyle: "none",
+      tex2jax: {
+	inlineMath: [["\\(", "\\)"]],
+	displayMath: [["\\[", "\\]"]],
+	ignoreClass: "nostem|nolatexmath"
+      },
+      asciimath2jax: {
+	delimiters: [["\\$", "\\$"]],
+	ignoreClass: "nostem|noasciimath"
+      },
+      TeX: { equationNumbers: { autoNumber: "none" } }
+    })
+    MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+      MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+	if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains('stemblock')) {
+	  data.math.root.display = "block"
+	}
+	return data
+      })
+    })
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</head>
+<body class="article">
+  <div id="layout-top-mask"></div> <!-- to mask scrolled content from below -->
+  <div id="layout-main">
+    <div id="layout-banner-spacer"></div>
+    <div id="layout-banner">
+      <div id="layout-logo">
+        <a href="https://www.ifip.org">
+          <img src="https://www.ifip.org/logo60/logo.jpg" height="120" alt="IFIP logo" />
+        </a>
+      </div> <!-- layout-logo -->
+      <div id="layout-title">
+	<div id="layout-title-main"><a href="https://ifip-wg28.github.io/index.html">WG2.8 on Functional Programming</a></div>
+	<div id="layout-title-description">Asilomar, CA, USA &ndash; June 11-15, 2018</div>
+      </div> <!-- layout-title -->
+      <div id="access" role="navigation">
+          <div class="menu-header">
+              <ul id="menu-bar" class="menu">
+                  <li id="menu-item-home" class="menu-item">
+                      <a href="https://ifip-wg28.github.io/index.html">Home</a>
+                  </li>
+                  <li id="menu-item-home" class="menu-item">
+                      <a href="https://ifip-wg28.github.io/members.html">Members</a>
+                  </li>
+                  <li id="menu-item-meetings" class="menu-item">
+                      <a href="https://ifip-wg28.github.io/meetings.html">Meetings</a>
+                  </li>
+                  <li id="menu-item-location" class="menu-item">
+                      <a href="index.html">About</a>
+                  </li>
+                  <li id="menu-item-attendees" class="menu-item">
+                      <a href="attendees.html">Attendees</a>
+                  </li>
+                  <li id="menu-item-minutes" class="menu-item current-menu-item">
+                      <a href="minutes.html">Technical Presentations</a>
+                  </li>
+              </ul>
+          </div>
+      </div> <!-- #access -->
+    </div> <!-- layout-banner -->
+    <div class="clearer"></div>
+    <div id="layout-content-box">
+      <div id="content">
+<div class="sect1">
+<h2 id="_technical_presentations">Technical Presentations</h2>
+<div class="sectionbody">
+<div class="openblock unstyled talks">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Nada Amin:</strong> <em>CLP(SMT)</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>We show how easy it is to hook an SMT (Satisfiability Modulo Theory) solver
+such as CVC4 or Z3 as a backend to miniKanren, an embedded domain-specific
+language in Scheme, to create an environment for constraint logic programming.
+We describe the simple implementation and illustrate the technology through
+interpreters, synthesis, and symbolic execution.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://github.com/namin/clpsmt-miniKanren/blob/master/talk.scm">Code</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.cs.cornell.edu/~jnfoster"><strong>Nate Foster:</strong></a> <em>p4v or: How I Learned to Stop Worrying and Trust Z3</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>We present the design and implementation of p4v, a practical tool for
+verifying data planes described using the P4 programming language. The
+design of p4v is based on classic verification techniques but adds several
+key innovations including a novel mechanism for incorporating assumptions
+about the control plane and domain-specific optimizations which are needed
+to scale to large programs. We present case studies showing that p4v
+verifies important properties and finds bugs in real-world programs. We
+conduct experiments to quantify the scalability of p4v on a wide range of
+additional examples. We show that with just a few hundred lines of
+control-plane annotations, p4v is able to verify critical safety properties
+for switch.p4, a program that implements the functionality of on a modern
+data center switch, in under three minutes.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/36-asilomar-2018/02-foster-slides.pdf">Slides</a>, <a href="https://wg28.cs.uchicago.edu/36-asilomar-2018/02-foster-paper.pdf">Paper</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.cs.cornell.edu/~jnfoster"><strong>Nate Foster:</strong></a> <em>Probabilistic NetKAT</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>We develop new techniques for reasoning about probabilistic network programs.
+The core of our approach is based on a semantic characterization of the
+history-free fragment of Probabilistic NetKAT in terms of finite-state,
+absorbing Markov chains. The key technical challenge lies in computing the
+semantics of the iteration operator, which we handle using an encoding in
+the style of a small-step operational semantics. We present a prototype
+implementation and develop heuristic optimizations that enable it to scale
+to networks of realistic size. Using examples, we show how our method can
+be used to establish generic properties such as program equivalence and
+refinement, as well as program-specific properties such as resilience to
+failures. We compare the scalability of our implementation against a
+state-of-the art tool, and we develop an extended case study involving a
+recently proposed design for data center networks.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/36-asilomar-2018/03-foster-slides.pdf">Slides</a>, <a href="https://wg28.cs.uchicago.edu/36-asilomar-2018/03-foster-paper.pdf">Paper</a>, <a href="http://frenetic-lang.org/probnetkat">Link to website</a></p>
+</div>
+</li>
+<li>
+<p><strong>Ron Garcia:</strong> <em>Improving Abstract Gradual Typing Semantics</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Abstracting Gradual Typing (AGT) is an approach to systematically constructing
+gradually-typed languages from statically-typed ones. Their semantics
+satisfy a number of desirable properties, including type safety, and
+criteria for gradual typing. However, the resulting semantics saturate
+programs with runtime checks, no matter how static the program. Hand-crafted
+gradual languages sparsely populate programs with checks, reducing the
+number as a program gets more static, culminating in statically-typed
+programs having no checks. In this talk, we show how to systematically
+transform AGT semantics to support sparse checking.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/36-asilomar-2018/04-garcia-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.cs.cmu.edu/~rwh"><strong>Bob Harper:</strong></a> <em>Computational Cartesian Cubical Type Theory</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>We present a dependent type theory organized around a Cartesian notion of
+cubes (with faces, degeneracies, and diagonals), supporting both fibrant
+and non-fibrant types. The fibrant fragment validates Voevodsky&#8217;s univalence
+axiom and includes a circle type, while the non-fibrant fragment includes
+exact (strict) equality types satisfying equality reflection. Our type
+theory is defined by a semantics in cubical partial equivalence relations,
+and is the first two-level type theory to satisfy the canonicity property:
+all closed terms of boolean type evaluate to either true or false.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="http://www.cs.cmu.edu/~rwh">Link to website</a></p>
+</div>
+</li>
+<li>
+<p><strong>Andrew Kennedy:</strong> <em>Typing with Continuations for the Hack Programming Language</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>In this talk I describe how we formalized the flow-sensitive type system
+of the Hack programming language, Facebook&#8217;s replacement for PHP. We use
+continuation typings to deal with control flow constructs such as conditionals,
+break, continue, and finally.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/36-asilomar-2018/06-kennedy-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://cs.uchicago.edu/~jhr"><strong>John Reppy:</strong></a> <em>Continuations, threads, and LLVM</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>This talk describes some ongoing work on the design of compiler
+intermediate-representations that can support concurrency and parallelism.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/36-asilomar-2018/07-reppy-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Gabriel Scherer:</strong> <em>Keep (re)playing until your get all the successes</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>In this talk I will show an implementation of angelic non-determinism (as
+with the <code>amb</code> operator) that uses only mutable state and exceptions&#8201;&#8212;&#8201;we have pure OCaml and SML implementations, without changingthe compiler
+or the runtime system. This approach, which relies on a neat trick found
+by James Koppel, can be extended to an implementation of full delimited
+continuations! (This is joint work with Jimmy Koppel and Armando Solar-Lezama)</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/36-asilomar-2018/08-scherer-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Gabriel Scherer:</strong> <em>Short course on classical realizability</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>This talk was a blackboard intro course on classical realizability (a
+realizability interpretation of abstract machines designed to easily be
+extended to realize computational effects, starting with classic control
+effects). I introduced positive and negative interpretations of each type
+of the simply-typed lambda-calculus, sketched a proof of the fundamental
+lemma&#8201;&#8212;&#8201;well-typed terms realize the interpretation of their types&#8201;&#8212;&#8201;with weak normalization as a corollary.</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><a href="https://alexandrasilva.org/#/main.html"><strong>Alexandra Silva:</strong></a> <em>Almost Sure Productivity</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>We define Almost Sure Productivity (ASP), a probabilistic generalization
+of the productivity condition for coinductively defined structures.
+Intuitively, a probabilistic coinductive stream or tree is ASP if it
+produces infinitely many outputs with probability 1. Formally, we define
+almost sure productivity using a final coalgebra semantics of programs
+inspired from Kerstan and Koenig. Then, we introduce a core language for
+probabilistic streams and trees, and provide two approaches to verify ASP:
+a sufficient syntactic criterion, and a reduction to model-checking pCTL*
+formulas on probabilistic pushdown automata. The reduction shows that ASP
+is decidable for our core language. Joint work with Alejandro Aguirre,
+Gilles Barthe, and Justin Hsu.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/36-asilomar-2018/">Slides</a>, <a href="https://arxiv.org/abs/1802.06283">Link to paper on arXiv</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://homepages.inf.ed.ac.uk/wadler"><strong>Philip Wadler:</strong></a> <em>Programming Language Foundations in Agda</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>The leading textbook for formal methods is Software Foundations (SF),
+written by Benjamin Pierce in collaboration with others, and based on Coq.
+After five years using SF in the classroom, I have come to the conclusion
+that Coq is not the best vehicle for this purpose, as too much of the
+course needs to focus on learning tactics for proof derivation, to the
+cost of learning programming language theory. Accordingly, I have written
+a new textbook, Programming Language Foundations in Agda (PLFA). PLFA
+covers much of the same ground as SF, although it is not a slavish imitation.
+What did I learn from writing PLFA? First, that it is possible. One might
+expect that without proof tactics that the proofs become too long, but in
+fact proofs in PLFAare about the same length as those in SF. Proofs in Coq
+require an interactive environment to be understood, while proofs in Agda
+can be read on the page. Second, that constructive proofs of preservation
+and progress give immediate rise to a prototype evaluator. This fact is
+obvious in retrospect but it is not exploited in SF (which instead provides
+a separate normalise tactic) nor can I find it in the literature. Third,
+that using raw terms with a separate typing relation is far less perspicuous
+than using inherently-typed terms. SF uses the former presentation, while
+PLFA presents both; the former uses about 1.6 as many lines of Agda code
+as the latter, roughly the golden ratio. The textbook is written as a
+literate Agda script, and can be found here: <a href="http://plfa.inf.ed.ac.uk" class="bare">http://plfa.inf.ed.ac.uk</a></p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/36-asilomar-2018/11-wadler-paper.pdf">Paper</a>, <a href="http://plfa.inf.ed.ac.uk/">Link to website</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.cis.upenn.edu/~sweirich"><strong>Stephanie Weirich:</strong></a> <em>"Verifying" the Glasgow Haskell Compiler Core language</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>This is a work-in-progress talk about using Coq to reason about the
+implementation of Haskell programs (GHC in particular).</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/36-asilomar-2018/12-weirich-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.cis.upenn.edu/~stevez"><strong>Steve Zdancewic:</strong></a> <em>Interaction Trees in Coq</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>In this talk, I&#8217;ll describe "Interaction Trees," a datatype that is suited
+for representing effectful computations in Coq. Interaction trees are
+coinductively defined (and hence potentially infinite) trees, with nodes
+that describe the effects of exchanging information with the external
+environment. The trees are parameterized by a signature of such effects,
+which provide flexibility and allow for sharing of metatheory across
+instantiations. Interaction trees are a variant of Kiselyov &amp; Ishii&#8217;s
+<em>freer</em> monad. We have found them to be useful in several system developments
+associated with the DeepSpec project. I&#8217;ll sketch some of those, focusing
+on their use in the Verified LLVM semantics, where we&#8217;re using interaction
+trees to model interactions with the memory system.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/36-asilomar-2018/13-zdancewic-slides.pdf">Slides</a>, <a href="https://github.com/DeepSpec/InteractionTrees">Link to website</a></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+      </div> <!-- content -->
+    </div> <!-- layout-content-box -->
+    <div id="layout-footer-box">
+      <div id="layout-footer">
+	<div id="layout-footer-text">
+	  <strong>IFIP WG2.8 on Functional Programming</strong><br />
+	  Last updated 2024-04-28 11:13:40 UTC
+	</div> <!-- layout-footer-text -->
+      </div> <!-- layout-footer -->
+    </div> <!-- layout-footer-box -->
+  </div> <!-- layout-main -->
+</body>
+</html>

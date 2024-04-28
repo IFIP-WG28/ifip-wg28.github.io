@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Asciidoctor 2.0.21">
+  <meta name="keywords" content="IFIP WG 2.8, Functional Programming">
+  <title>IFIP WG2.8 WG 2.8 Meeting 42</title>
+  <link rel="stylesheet" href="https://ifip-wg28.github.io/styles/wg28-style.css" type="text/css" />
+  <!-- support for latexmath -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      messageStyle: "none",
+      tex2jax: {
+	inlineMath: [["\\(", "\\)"]],
+	displayMath: [["\\[", "\\]"]],
+	ignoreClass: "nostem|nolatexmath"
+      },
+      asciimath2jax: {
+	delimiters: [["\\$", "\\$"]],
+	ignoreClass: "nostem|noasciimath"
+      },
+      TeX: { equationNumbers: { autoNumber: "none" } }
+    })
+    MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+      MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+	if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains('stemblock')) {
+	  data.math.root.display = "block"
+	}
+	return data
+      })
+    })
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</head>
+<body class="article">
+  <div id="layout-top-mask"></div> <!-- to mask scrolled content from below -->
+  <div id="layout-main">
+    <div id="layout-banner-spacer"></div>
+    <div id="layout-banner">
+      <div id="layout-logo">
+        <a href="https://www.ifip.org">
+          <img src="https://www.ifip.org/logo60/logo.jpg" height="120" alt="IFIP logo" />
+        </a>
+      </div> <!-- layout-logo -->
+      <div id="layout-title">
+	<div id="layout-title-main"><a href="https://ifip-wg28.github.io/index.html">WG2.8 on Functional Programming</a></div>
+	<div id="layout-title-description">Utrecht, Netherlands &ndash; April 22-26, 2024</div>
+      </div> <!-- layout-title -->
+      <div id="access" role="navigation">
+          <div class="menu-header">
+              <ul id="menu-bar" class="menu">
+                  <li id="menu-item-home" class="menu-item">
+                      <a href="https://ifip-wg28.github.io/index.html">Home</a>
+                  </li>
+                  <li id="menu-item-home" class="menu-item">
+                      <a href="https://ifip-wg28.github.io/members.html">Members</a>
+                  </li>
+                  <li id="menu-item-meetings" class="menu-item">
+                      <a href="https://ifip-wg28.github.io/meetings.html">Meetings</a>
+                  </li>
+                  <li id="menu-item-location" class="menu-item">
+                      <a href="index.html">About</a>
+                  </li>
+                  <li id="menu-item-attendees" class="menu-item">
+                      <a href="attendees.html">Attendees</a>
+                  </li>
+                  <li id="menu-item-minutes" class="menu-item current-menu-item">
+                      <a href="minutes.html">Technical Presentations</a>
+                  </li>
+              </ul>
+          </div>
+      </div> <!-- #access -->
+    </div> <!-- layout-banner -->
+    <div class="clearer"></div>
+    <div id="layout-content-box">
+      <div id="content">
+<div class="sect1">
+<h2 id="_technical_presentations">Technical Presentations</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_monday">Monday</h3>
+<div class="openblock unstyled talks">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>KC Sivaramakrishnan:</strong> <em>Securing Functional Programs with Hardware Support</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Functional programming languages such as OCaml are memory-safe. MirageOS
+Unikernels, where many OS services are also written in OCaml, are safer
+than their counterparts running on Linux. However, even MirageOS Unikernels
+will have to include unsafe code written in C and C because that
+functionality does not exist in OCaml (say SQLite) or where tight control
+over memory is necessary (device drivers). Vulnerabilities in C and C
+may violate the safety guarantees provided by OCaml. How can we safeguard
+safe code from unsafe code in the same application? In this talk, I will
+present a hardware-assisted intra-process compartmentalisation technique
+for applications that mix safe(OCaml) and unsafe&#169; code. The technique
+ensures that vulnerabilities in C code do not affect OCaml code. Notably,
+only the C code pays the cost of additional safety. While compartment
+techniques are fairly standard, extending them to functional programming
+throws unique challenges, which we address in this work. We have implemented
+the technique by extending the open-source Shakthi RISC-V processor running
+bare metal MirageOS applications.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/01-sivaramakrishnan-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="http://justtesting.org"><strong>Manuel Chakravarty:</strong></a> <em>Functional Programming in Swift</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>When people talk about functional programming in modern multi-paradigm
+languages, they usually mention Rust, Scala, or Kotlin. You rarely hear
+Swift being mentioned. This is odd, as one might argue that, of these
+languages, Swift places the strongest emphasis on functional programming.</p>
+</div>
+<div class="paragraph">
+<p>In this talk, I will explain the core functional programming features of
+Swift, including its expressive type system, value types, and mutability
+control. Furthermore, I will discuss how Swift’s language design is
+influenced by the desire to create a language that addresses the whole
+spectrum from low-level systems programming up to high-level applications
+with sophisticated graphical user interfaces. Beyond the core language
+itself, functional programming also permeates Swift’s rich ecosystem of
+libraries. To support this point, I will outline some FP-inspired core
+libraries.</p>
+</div>
+<div class="paragraph">
+<p>Finally, I will briefly summarise practical considerations for using Swift.
+This includes the cross-platform toolchain, the package manager, and
+interoperability with other languages.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/02-chakravarty-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Sven-Bodo Scholz:</strong> <em>Type Patterns in SaC&#8201;&#8212;&#8201;on the interplay of constraints, error messages and partial evaluation</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Type Patterns in SaC ---
+on the interplay of constraints, error messages and partial evaluation</p>
+</div>
+<div class="paragraph">
+<p>Abstract:
+In this talk I present SaC&#8217;s Type Patterns and their implementation in the latest
+release of our compiler. Type patterns allow programmers to specify
+arbitrarily complex constraints between domains and co-domains of functions.
+As for most programs the correctness of these constraints cannot be fully statically
+guaranteed, we follow a hybrid approach for checking these constraints. By employing
+partial evaluation, we resolve a part of the constraints statically while relying
+on dynamic checks for those constraints we cannot resolve at compile time.
+As it turns out, this approach exposes an interesting challenge regarding the
+interplay between the quality of error messages and the effectiveness of partial evaluation.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/03-scholz-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Lennart Augustsson:</strong> <em>Combinators, revived. In memorian David Turner</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/04-augustsson-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Andreas Rossberg:</strong> <em>Engineering a Formal Language Spec (at industrial scale)</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>WebAssembly (Wasm) is a portable low-level byte code language and virtual
+machine. Its official specification includes a full formal semantics, and
+every new feature must be specified in this formal semantics, in prose,
+and in the official reference interpreter before it can be standardised.
+This manual process with its redundancies is laborious and error-prone.
+We present SpecTec, a DSL and toolchain that facilitates both the Wasm
+specification and the generation of artefacts necessary for standardisation.
+A definition of the Wasm semantics in SpecTec serves as a single source
+of truth, from which we can generate a typeset specification, including
+formal definitions and prose pseudocode descriptions, and a meta-level
+interpreter. Further backends for test generation and meta-theory in theorem
+provers are work in progress. Our ultimate aim is that SpecTec is adopted
+by the Wasm committee to specify future versions of the standard.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/05-rossberg-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Wouter Swierstra:</strong> <em>A correct-by-construction conversion to combinators</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>This talks shows how to define a conversion from the simply typed lambda
+calculus to combinatory logic that preserves both the types and semantics
+by construction.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/06-swierstra-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Wouter Swierstra:</strong> <em>The functional essence of imperative binary search trees</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Algorithms on restructuring binary search trees are typically
+presented in imperative pseudocode. Understandably so, as their
+performance relies on in-place execution, rather than the repeated
+allocation of fresh nodes in memory. Unfortunately, these imperative
+algorithms are notoriously difficult to verify as their loop
+invariants must relate the unfinished tree fragments being
+rebalanced. This talk presents several novel functional algorithms
+for accessing and inserting elements in a restructuring binary search
+tree that are as fast as their imperative counterparts; yet the
+correctness of these functional algorithms is established using a
+simple inductive argument.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/07-swierstra-slides.pdf">Slides</a></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tuesday">Tuesday</h3>
+<div class="openblock unstyled talks">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Jesper Cockx:</strong> <em>Agda Core: The Dream and the Reality</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Type systems are essential tools for us programmers and mathematicians to
+build highly trustworthy theories and systems, hence a natural question
+is: how can we trust them? The gold standard for trustworthiness is to
+have a small core language that can independently verify our developments.
+Unlike its cousins like Coq and Lean, Agda does not have a proper core
+language, so three years ago I optimistically set out to change that.
+However, carving out a core for a language not designed with one in mind
+is hard, especially a feature-rich and organically grown language such as
+Agda.</p>
+</div>
+<div class="paragraph">
+<p>In this talk I will share my initial objectives for developing Agda Core
+as well as the difficulties I encountered working towards them. I would
+also like to open up a discussion around more general questions related
+to accidental complexity, technical debt, and the curse of novelty in
+research on type system engineering.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/08-cockx-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://pauillac.inria.fr/~remy"><strong>Didier Rémy:</strong></a> <em>Avoiding Signature Avoidance</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Signature avoidance is still one of the annoying problems that arise with
+ML modules.  OCaml solves it in often surprising ways.  We will discuss
+the problem through examples, present some design space, and give an
+incomplete but simple specification for which we have a complete
+algorithm.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/09-remy-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Youyou Cong:</strong> <em>Towards a Type Theory for Verifying Gradable Properties</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Type theories have mainly been used to verify properties that either hold
+or do not hold.  In the real world, however, there are also gradable
+properties that hold to some degree.  I will present my preliminary ideas
+on designing a type theory for verifying gradable properties in various
+domains, including programming, natural language, and music.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/10-cong-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Niki Vazou:</strong> <em>Design, implementation, and mechanization of Dynamic Policies</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>In this talk, I present various interpretations of the security condition
+of dynamic policies, concretely, time transitive and no time transitive.
+I present dynLIO, en enforcement mechanism that extends LIO to ensure
+safety of IFC policies and discuss the development of the meta theory in
+Liquid Haskell.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/11-vazou-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Thomas Bourgeat:</strong> <em>Specifying and verifying the tricks of computer architects</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>After a quick introduction to the semantics of modules in a rule-based
+language and a manual proof of refinement between two simple modules, we
+will use the old idea of Flushing (as proposed by Burch &amp; Dill in CAV '94)
+to define a refinement map inductively. This technique allows for proving
+refinement by induction on the derivation of the refinement map, boiling
+down&#8201;&#8212;&#8201;in simple cases&#8201;&#8212;&#8201;to the commutative properties between the
+transitions of the system.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/12-bourgeat-slides.pdf">Slides</a></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_wednesday">Wednesday</h3>
+<div class="openblock unstyled talks">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Jacco Krijnen:</strong> <em>A Layered Certifying Compiler Architecture</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/13-krijnen-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.cse.chalmers.se/~ulfn"><strong>Ulf Norell:</strong></a> <em>Constraint-based Random Generators</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+</li>
+<li>
+<p><a href="https://pauillac.inria.fr/~xleroy"><strong>Xavier Leroy:</strong></a> <em>Sharing is caring: a somewhat efficient convertibility test</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Type-checkers / proof-checkers for dependently-typed systems perform lots
+of convertibility tests ("are these two terms equal modulo reductions?").
+Except for proofs by large-scale reflection, which are best served by
+specialized compiled evaluators, most convertibility tests in practice are
+small and easy-looking, yet can still take a very long time if unnecessary
+evaluations are performed.  In particular, the textbook strategy of reducing
+both terms to normal form and comparing the normal forms is often unusable.</p>
+</div>
+<div class="paragraph">
+<p>As part of her PhD thesis, Nathanaëlle Courant has developed and verified
+a novel convertibility check that tries hard not to compute too much before
+concluding.  It relies on two ingredients: careful use of lazy evaluation
+to share reductions in normal-order weak and strong normalization; and a
+presentation of the convertibility check as an "and-or" decision tree, to
+be explored both lazily and in parallel (using fair interleaving).</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><a href="https://www.cs.princeton.edu/~dpw"><strong>David Walker:</strong></a> <em>Relational Network Verification</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Relational network verification is a new approach to validating network
+changes. In contrast to traditional network verification, which analyzes
+specifications for a single network snapshot, relational network verification
+analyzes specifications concerning two network snapshots (e.g., pre- and
+post-change snapshots) and captures their similarities and differences.
+Relational change specifications are compact and precise because they
+specify the flows or paths that change between snapshots and then simply
+mandate that other behaviors of the network "stay the same", without
+enumerating them. To achieve similar guarantees, single-snapshot specifications
+need to enumerate all flow and path behaviors that are not expected to
+change, so we can check that nothing has accidentally changed. Thus, precise
+single-snapshot specifications are proportional to network size, which
+makes them impractical to generate for many real-world networks.</p>
+</div>
+<div class="paragraph">
+<p>To demonstrate the value of relational reasoning, we develop a high-level
+relational specification language and a tool called Rela to validate network
+changes. Rela first compiles input specifications and network snapshot
+representations to finite state transducers. It then checks compliance
+using decision procedures for automaton equivalence. Our experiments using
+data on complex changes to a global backbone (with over 10^3 routers) find
+that Rela specifications need fewer than 10 terms for 93% of them and it
+validates 80% of them within 20 minutes.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/11-vazou-slides.pdf">Slides</a>, <a href="https://arxiv.org/abs/2403.17277">Link to paper</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://cseweb.ucsd.edu/~npolikarpova"><strong>Nadia Polikarpova:</strong></a> <em>E-Graph Guided Lemma Discovery for Inductive Proofs</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>The problem of automatically proving the equality of terms over recursive
+functions and inductive data types is challenging, as such proofs often
+require auxiliary lemmas which must themselves be proven. Previous attempts
+at lemma discovery compromise on either efficiency or efficacy. Goal-directed
+approaches are fast but limited in expressiveness, as they can only discover
+auxiliary lemmas which entail their goals. Theory exploration approaches
+are expressive but inefficient, as they exhaustively enumerate candidate
+lemmas.</p>
+</div>
+<div class="paragraph">
+<p>We introduce e-graph guided lemma discovery, a new approach to finding
+equational proofs that makes theory exploration goal-directed. We accomplish
+this by using e-graphs and equality saturation to efficiently construct
+and compactly represent the space of all goal-oriented proofs. This allows
+us to explore only those auxiliary lemmas guaranteed to help make progress
+on some of these proofs. We implemented our method in a new prover called
+CCLemma and compared it with three state-of-the-art provers across a variety
+of benchmarks. CCLemma performs consistently well on two standard benchmarks
+and additionally solves 50% more problems than the next best tool on a new
+challenging set.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/17-polikarpova-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://simon.peytonjones.org"><strong>Simon Peyton-Jones:</strong></a> <em>Verification in Verse</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>This talk presents our approach to type-checking (aka verification) of Verse program.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/18-peyton-jones-slides.pptx">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.cse.chalmers.se/~rjmh"><strong>John Hughes:</strong></a> <em>Towards a DSL for requirements on smart contracts</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+</li>
+<li>
+<p><strong>Dave MacQueen:</strong> <em>How SML Started&#8201;&#8212;&#8201;Where it might go from here</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Title: How SML started&#8201;&#8212;&#8201;Where it might go from here
+Speaker: David MacQueen, University of Chicago (Emeritus)
+Where: IFIP Working Group 2.8 Meeting, Utrecht, April 24, 2024</p>
+</div>
+<div class="paragraph">
+<p>I discuss the state of PL research leading up to and including the
+design of Standard ML in the mid-1980s, followed by SML-related developments
+in the decades since then.</p>
+</div>
+<div class="paragraph">
+<p>A second part (not presented), covers some possible changes to SML contemplated by the speaker.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/20-macqueen-slides.pdf">Slides</a></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_thursday">Thursday</h3>
+<div class="openblock unstyled talks">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.cl.cam.ac.uk/~nk480"><strong>Neel Krishnaswami:</strong></a> <em>The Denotational Semantics of SSA</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.cs.tufts.edu/~nr"><strong>Norman Ramsey:</strong></a> <em>A Declarative Compiler Driver (An exercise in function composition)</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.diku.dk/~henglein"><strong>Fritz Henglein:</strong></a> <em>Tabsxxxx Types versus spaces</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+</li>
+<li>
+<p><strong>Benjamin Pierce &amp; John Hughes:</strong> <em>Random Heaps</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/24-pierce-hughes.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://pauillac.inria.fr/~fpottier"><strong>François Pottier:</strong></a> <em>Will It Fit? Worst-Case Heap Space Complexity Bounds for Concurrent Programs with GC</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/24-pottier-slides.pdf">Slides</a></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_friday">Friday</h3>
+<div class="openblock unstyled talks">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Jesper Cockx &amp; Ulf Norell:</strong> <em>Opaque Definitions in Agda</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.informatik.uni-freiburg.de/~thiemann"><strong>Peter Thiemann:</strong></a> <em>Law and Order for Typestate</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Typestate systems are notoriously complex as they require sophisticated
+machinery for tracking aliasing. We propose a new, transition-oriented
+foundation for typestate in the setting of impure functional programming.
+Our approach relies on ordered types for simple alias tracking and its
+formalization draws on work on bunched implication. Yet, we support a
+flexible notion of borrowing in the presence of typestate.</p>
+</div>
+<div class="paragraph">
+<p>Our core calculus comes with a notion of resource types indexed by an
+ordered partial monoid that models abstract state transitions. We prove
+syntactic type soundness with respect to a resource-instrumented semantics.
+We give an algorithmic version of our type system and prove its soundness.
+Algorithmic typing facilitates a simple surface language that does not
+expose tedious details of ordered types. We implemented a typechecker for
+the surface language along with an interpreter for the core language.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/27-thiemann-slides.pdf">Slides</a></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+      </div> <!-- content -->
+    </div> <!-- layout-content-box -->
+    <div id="layout-footer-box">
+      <div id="layout-footer">
+	<div id="layout-footer-text">
+	  <strong>IFIP WG2.8 on Functional Programming</strong><br />
+	  Last updated 2024-04-28 11:13:42 UTC
+	</div> <!-- layout-footer-text -->
+      </div> <!-- layout-footer -->
+    </div> <!-- layout-footer-box -->
+  </div> <!-- layout-main -->
+</body>
+</html>
