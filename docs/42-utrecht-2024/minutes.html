@@ -562,8 +562,27 @@ in the decades since then.</p>
 </li>
 <li>
 <p><a href="https://www.cs.tufts.edu/~nr"><strong>Norman Ramsey:</strong></a> <em>A Declarative Compiler Driver (An exercise in function composition)</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
 <div class="paragraph">
-<p><strong>No Abstract</strong></p>
+<p>For teaching compilers, I have developed a compiler driver that is
+directed declaratively, by specifying only the (source, target, or
+intermediate) language to be input and the language to be output.
+Each high-level intermediate language can be represented using a
+subset of the source language; for debugging, these representations
+can be run using a reference interpreter.  Free choice of both input
+and output languages implies a quadratic number of translations, but
+the driver implements them with a linear amount of work: three
+functions per language, each of constant size.  One function reads the
+language, one writes the language, and one translates the language&#8217;s
+predecessor in the compiler pipeline.  These functions illustrate the
+power of function composition.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/22-ramsey-slides.pdf">Slides</a></p>
 </div>
 </li>
 <li>
@@ -648,7 +667,7 @@ the surface language along with an interpreter for the core language.</p>
       <div id="layout-footer">
 	<div id="layout-footer-text">
 	  <strong>IFIP WG2.8 on Functional Programming</strong><br />
-	  Last updated 2024-04-28 12:29:16 UTC
+	  Last updated 2024-04-29 12:44:40 UTC
 	</div> <!-- layout-footer-text -->
       </div> <!-- layout-footer -->
     </div> <!-- layout-footer-box -->
