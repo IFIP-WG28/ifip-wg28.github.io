@@ -376,9 +376,26 @@ transitions of the system.</p>
 <ul>
 <li>
 <p><strong>Jacco Krijnen:</strong> <em>A Layered Certifying Compiler Architecture</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
 <div class="paragraph">
-<p><strong>No Abstract</strong></p>
+<p>The formal verification of an optimising compiler for a realistic programming
+language is no small task. Most verification efforts develop the compiler
+and its correctness proof hand in hand. Unfortunately, this approach is
+less suitable for today’s constantly evolving community-developed open-source
+compilers and languages. I will present an alternative approach to
+high-assurance compilers, where a separate certifier uses translation
+validation to assess and certify the correctness of each individual compiler
+run. I will also demonstrate that an incremental, layered architecture for
+the certifier improves assurance step-by-step and may be developed largely
+independently from the constantly changing main compiler code base. This
+approach to compiler verification is practical, as witnessed by the
+development of a certifier for the deployed, in-production compiler for
+the Plutus smart contract language.</p>
 </div>
+</div>
+</details>
 <div class="paragraph">
 <p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/13-krijnen-slides.pdf">Slides</a></p>
 </div>
@@ -667,7 +684,7 @@ the surface language along with an interpreter for the core language.</p>
       <div id="layout-footer">
 	<div id="layout-footer-text">
 	  <strong>IFIP WG2.8 on Functional Programming</strong><br />
-	  Last updated 2024-04-29 12:44:40 UTC
+	  Last updated 2024-04-29 13:14:07 UTC
 	</div> <!-- layout-footer-text -->
       </div> <!-- layout-footer -->
     </div> <!-- layout-footer-box -->
