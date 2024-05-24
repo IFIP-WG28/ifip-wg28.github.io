@@ -591,6 +591,42 @@ respect to the equational theory of SSA.</p>
 </div>
 </li>
 <li>
+<p><a href="https://www.ccs.neu.edu/home/amal"><strong>Amal Ahmed:</strong></a> <em>Realistic Realizability: Specifying ABIs You Can Count On</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>The Application Binary Interface (ABI) for a language specifies the
+interoperability rules for each of its target platforms, including properties
+such as data layout and calling conventions, such that compliance with the
+rules will ensure "safe" execution and perhaps provide certain guarantees
+about resource usage. These rules are relied upon by compilers for that
+language and others, libraries, and foreign-function interfaces. Unfortunately,
+ABIs are typically specified in prose and, while type systems for source
+languages have grown richer over time, ABIs have largely remained the same,
+lacking analogous advances in expressivity and safety guarantees.</p>
+</div>
+<div class="paragraph">
+<p>I&#8217;ll outline a vision for richer, semantic ABIs that would facilitate safer
+interoperability and library integrations, supported by a methodology for
+formally specifying ABIs using realizability models. These semantic ABIs
+relate abstract, high-level types to unwieldy, but well-behaved, low-level
+code. We demonstrate the approach with a case study that formalizes the
+ABI of a functional source language in terms of a reference-counting
+implementation in a C-like target language. An important contribution is
+our reference-counting realizability model which uses a novel extension
+to separation logic that captures how each reference owns a share to the
+reference-counted resource. I&#8217;ll discuss how different practically-motivated
+ABI design decisions can be interpreted via a semantic ABI and present the
+first formalization of a Swift-style ABI with library evolution.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/22-ahmed-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
 <p><a href="https://www.cs.tufts.edu/~nr"><strong>Norman Ramsey:</strong></a> <em>A Declarative Compiler Driver (An exercise in function composition)</em></p>
 <details>
 <summary class="title"><strong>Abstract</strong></summary>
@@ -612,7 +648,7 @@ power of function composition.</p>
 </div>
 </details>
 <div class="paragraph">
-<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/22-ramsey-slides.pdf">Slides</a></p>
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/23-ramsey-slides.pdf">Slides</a></p>
 </div>
 </li>
 <li>
@@ -627,7 +663,7 @@ power of function composition.</p>
 <p><strong>No Abstract</strong></p>
 </div>
 <div class="paragraph">
-<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/24-pierce-hughes.pdf">Slides</a></p>
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/25-pierce-hughes.pdf">Slides</a></p>
 </div>
 </li>
 <li>
@@ -636,7 +672,7 @@ power of function composition.</p>
 <p><strong>No Abstract</strong></p>
 </div>
 <div class="paragraph">
-<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/24-pottier-slides.pdf">Slides</a></p>
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/26-pottier-slides.pdf">Slides</a></p>
 </div>
 </li>
 </ul>
@@ -681,7 +717,7 @@ the surface language along with an interpreter for the core language.</p>
 </div>
 </details>
 <div class="paragraph">
-<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/27-thiemann-slides.pdf">Slides</a></p>
+<p><a href="https://wg28.cs.uchicago.edu/42-utrecht-2024/28-thiemann-slides.pdf">Slides</a></p>
 </div>
 </li>
 </ul>
@@ -697,7 +733,7 @@ the surface language along with an interpreter for the core language.</p>
       <div id="layout-footer">
 	<div id="layout-footer-text">
 	  <strong>IFIP WG2.8 on Functional Programming</strong><br />
-	  Last updated 2024-04-30 00:22:40 UTC
+	  Last updated 2024-05-24 12:39:57 UTC
 	</div> <!-- layout-footer-text -->
       </div> <!-- layout-footer -->
     </div> <!-- layout-footer-box -->
