@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Asciidoctor 2.0.21">
+  <meta name="keywords" content="IFIP WG 2.8, Functional Programming">
+  <title>IFIP WG2.8 Meeting 44 Minutes</title>
+  <link rel="stylesheet" href="https://ifip-wg28.github.io/styles/wg28-style.css" type="text/css" />
+  <!-- support for latexmath -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      messageStyle: "none",
+      tex2jax: {
+	inlineMath: [["\\(", "\\)"]],
+	displayMath: [["\\[", "\\]"]],
+	ignoreClass: "nostem|nolatexmath"
+      },
+      asciimath2jax: {
+	delimiters: [["\\$", "\\$"]],
+	ignoreClass: "nostem|noasciimath"
+      },
+      TeX: { equationNumbers: { autoNumber: "none" } }
+    })
+    MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+      MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+	if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains('stemblock')) {
+	  data.math.root.display = "block"
+	}
+	return data
+      })
+    })
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</head>
+<body class="article">
+  <div id="layout-top-mask"></div> <!-- to mask scrolled content from below -->
+  <div id="layout-main">
+    <div id="layout-banner-spacer"></div>
+    <div id="layout-banner">
+      <div id="layout-logo">
+        <a href="https://www.ifip.org">
+          <img src="https://ifip-wg28.github.io/images/ifip-logo.png" height="120" alt="IFIP logo" />
+        </a>
+      </div> <!-- layout-logo -->
+      <div id="layout-title">
+	<div id="layout-title-main"><a href="https://ifip-wg28.github.io/index.html">WG2.8 on Functional Programming</a></div>
+	<div id="layout-title-description">Viana do Castelo, Portugal &ndash; March 2-6, 2026</div>
+      </div> <!-- layout-title -->
+      <div id="access" role="navigation">
+          <div class="menu-header">
+              <ul id="menu-bar" class="menu">
+                  <li id="menu-item-home" class="menu-item">
+                      <a href="https://ifip-wg28.github.io/index.html">Home</a>
+                  </li>
+                  <li id="menu-item-home" class="menu-item">
+                      <a href="https://ifip-wg28.github.io/members.html">Members</a>
+                  </li>
+                  <li id="menu-item-meetings" class="menu-item">
+                      <a href="https://ifip-wg28.github.io/meetings.html">Meetings</a>
+                  </li>
+                  <li id="menu-item-location" class="menu-item">
+                      <a href="index.html">About</a>
+                  </li>
+                  <li id="menu-item-attendees" class="menu-item">
+                      <a href="attendees.html">Attendees</a>
+                  </li>
+                  <li id="menu-item-minutes" class="menu-item current-menu-item">
+                      <a href="minutes.html">Technical Presentations</a>
+                  </li>
+              </ul>
+          </div>
+      </div> <!-- #access -->
+    </div> <!-- layout-banner -->
+    <div class="clearer"></div>
+    <div id="layout-content-box">
+      <div id="content">
+<div class="sect1">
+<h2 id="_technical_presentations">Technical Presentations</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_monday">Monday</h3>
+<div class="openblock unstyled talks">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Sam Lindley:</strong> <em>Modal effect types</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Effect handlers are a powerful abstraction for defining, customising,
+and composing computational effects. Statically ensuring that all effect
+operations are handled requires some form of effect system, but using a
+traditional effect system would require adding extensive effect
+annotations to the millions of lines of existing code in these
+languages. Recent proposals seek to address this problem by removing the
+need for explicit effect polymorphism. However, they typically rely on
+fragile syntactic mechanisms or on introducing a separate notion of
+second-class function. We introduce a novel approach based on modal
+effect types.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/01-lindley-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Anil Madhavapeddy:</strong> <em>Programming the planet, functionally, and with OxCaml!</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+</li>
+<li>
+<p><strong>Max New:</strong> <em>Notions of Stack-manipulating Computation as Relative Monads (in CBPV)</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Monads have been successful in embedding effects in high-level functional languages, but what about low-level implementations of effects that we implement in our compilers? We show how common stack-based calling conventions for effects can be expressed using a formalism called relative monads in the call-by-push-value calculus, which we here view as a metalanguage for stack machines. We give a CBPV-to-CBPV translation that implements the built-in notion of effect in CBPV as the user-defined relative monad, generalizing Haskell-style do-notation to the entire language. All of this has been implemented in Zydeco, our experimental CBPV-based language and compiler.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://dl.acm.org/doi/10.1145/3720434">Link to paper</a>, <a href="https://github.com/zydeco-lang/zydeco">GitHub repository</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.cis.upenn.edu/~sweirich"><strong>Stephanie Weirich:</strong></a> <em>Commuting Conversions in CBPV</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Levy’s call-by-push-value (CBPV) is a language that subsumes both call-by-name and call-by-value lambda calculi by syntactically distinguishing values from computations and explicitly specifying execution order. This low-level handling of computation suspension and resumption makes CBPV suitable as a compiler intermediate representation (IR), while its substitution evaluation semantics affords compositional reasoning about programs. In particular, 𝛽𝜂-equivalences in CBPV have been used to justify compiler optimizations in low-level IRs. However, these equivalences do not validate commuting conversions, which are key transformations in compiler passes such as A-normalization. Such transformations syntactically rearrange computations without affecting evaluation order, and can reveal new opportunities for inlining.</p>
+</div>
+<div class="paragraph">
+<p>In this work, we identify the commuting conversions of CBPV, define a commuting conversion normal form (CCNF) for CBPV, present a single-pass transformation into CCNF based on A-normalization, and prove that well-typed, translated programs evaluate to the same result. To avoid the usual code duplication issues that also arise with A-normal form, we adapt the explicit join point constructs by Maurer et al. [2017]. Our results are all mechanized in Lean 4.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/04-weirich-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Manuel Serrano:</strong> <em>Dr Strangeproof, or: how I learned to stop worrying and love testing</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>The HipHop whose core language synchronous reactif language is that of
+Estere uses an unusual compilation pipeline. Instead of producing
+assembly code, as most compilers do, it generates a electronic
+circuits made of and-gates, or-gates, and registers. That circuit can
+then be either interpreted or compiled to sequential code. The
+compilation to circuits is described in the reference bookThe
+Constructive Semantics of Pure Esterel. It has partially been proved
+correct using the Rocq proof assistant Towards a Coq-verified Chain of
+Esterel Semantics. In this talk we show an error we found in the
+compiler and we explain where the apparent paradox between a Rock
+proof and a compiler bug comes from. We also present the fix that
+makes the compiler correct.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://github.com/manuel-serrano/ifip2.8-2026">GitHub repository</a></p>
+</div>
+</li>
+<li>
+<p><strong>Leo Lampropoulos:</strong> <em>Programmable Property-Based Testing</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>In modern PBT frameworks, properties are usually written in shallowly embedded domain-specific languages, and their definition is tightly coupled to the way they are tested. Such frameworks often provide convenient configuration options to customize aspects of the testing process, but users are limited to precisely what library authors had the prescience to allow for when developing the framework. In this talk, we propose using a mixed embedding for writing properties, which reifies properties as a data structure and decouples them from the property runners that execute them. By implementing this approach in Rocq and Racket, we will explore the flexibility of this new approach by rapidly prototyping a variety of property runners, highlighting domain-specific testing improvements that can be unlocked by more programmable testing.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/06-lampropoulos-slides.pptx">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Ningning Xie:</strong> <em>Extensible data types for tabular data</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>This work proposes a novel language design that combines extensible data types,
+implemented through row types and row polymorphism, with ad-hoc polymorphism,
+implemented through type classes. We evaluate our type system using the Brown
+Benchmark for Table Types, demonstrating the utility of extensible rows with
+type classes for table types.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/07-xie-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://natefoster.org"><strong>Nate Foster:</strong></a> <em>Relational Reasoning with Lenses</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>We present a framework for verifying relational properties of reconfigurable programs — i.e., programs whose behavior is parameterized by configurations that may evolve dynamically at runtime. Reasoning about such programs poses unique challenges: one must verify not only relations between programs, but also relations between their configurations. We address this by developing a program logic that uses symmetric lenses to maintain specified relations on configurations, along with an accompanying implementation that enables mostly-automated verification of relational properties such as program equivalence, non-interference, and more.</p>
+</div>
+<div class="paragraph">
+<p>Note: this is joint work with Eric Hayden Campbell and Mark Barbone.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/08-foster-slides.pdf">Slides</a></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tuesday">Tuesday</h3>
+<div class="openblock unstyled talks">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Ilya Sergey:</strong> <em>Mechanising a Regex-Based Borrow Checker: An Exercise in AI-Assisted Metatheory</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>I present a mechanised soundness proof for a regex-based borrow checker for Move, a Rust-inspired smart contract language. The type system tracks aliasing as regular expressions over field paths, using Brzozowski derivatives for field borrows and Kleene star for unbounded aliasing from calls and loops. Write safety reduces to a regex emptiness check. Working with Claude Code over 18 intensive days, I produced 34,897 lines of sorry-free Lean 4 while the proof effort itself uncovered three bugs in the type system rules. I argue that AI-assisted formalisation shifts the bottleneck from writing proofs to designing invariants, making machine-checked soundness a practical tool for iterative type system development.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/09-sergey-slides.pptx">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Zoe Paraskevopoulou:</strong> <em>Towards Foundational Verification of Firmware in Rocq</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+</li>
+<li>
+<p><strong>Mae Milano:</strong> <em>Fearless Concurrency in Theory and Practice</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>A few year ago, I built a new programming language and type system for fearless concurrency. This language&#8217;s type system encodes a static "tree of regions" invariant, in which the object graph is partitioned into regions, such that two distinct regions are connected via at most a single reference. Through clever inference and an efficient static model of the heap, this language effectively allows the representaton of common cyclic and recursive datatypes while maintaining strong guarantees of race freedom. In the years since this language was first published, Apple has taken this system and adapted it for use in the Swift programming language. In this talk, I present an overview of the type system and its key invariants, and then discuss the process of transforming it to fit the needs of the Swift language and ecosystem.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/11-milano-slides.pptx">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://people.mpi-sws.org/~rossberg"><strong>Andreas Rossberg:</strong></a> <em>Type-safe Interface Upgrades</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Many forms of IDLs (interface definition language) involve the serialisation of declared data structures. And they often allow evolving the shape of this data over time. Yet there often is very little rigour or checking that the new format is backwards-compatible, such that it does not break existing clients. We give a semantics to the folklore approach of allowing to extend records with optional fields, and formalise it as a “temporal” notion of (coercive) subtyping, with some non-standard definitions. It can be checked statically to prevent client-breaking upgrades. “Reverse” subtyping can be extended soundly to both variants and higher-order values, under adequate assumptions.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/12-rossberg-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Wouter Swierstra:</strong> <em>Cost Analysis for First Order Laziness</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Proof assistants are typically used to verify programs’ correctness – yet
+reasoning about the performance of
+programs appears to be less straightforward. This talk explores a lightweight
+technique for reasoning about
+the algorithmic complexity of purely functional data structures and algorithms:
+defining a cost function by
+induction on a program’s graph. To illustrate this approach, this paper presents
+the worst case and amortized
+analysis of several data structures, including batched queues and real time
+queues. Using recent work on first
+order laziness, we will see how to reason formally about sharing in a purely
+functional setting, without introducing
+an explicit heap or resorting to separation logic. Simple induction suffices.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/13-swierstra-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Vasco Vasconcelos:</strong> <em>The Types of Dyadic Interaction – a Tribute to Kohei Honda</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+</li>
+<li>
+<p><strong>Sukyoung Ryu:</strong> <em>Rust’s Type Checker is Unsound</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Rust is claimed to be a type-sound language capable of preventing various undesirable behaviors, including memory bugs. However, rustc, the official Rust compiler, is not immune to defects; it contains soundness bugs, where the compiler accepts programs that should be rejected during type checking. We present an empirical study of 23 issues that report potential soundness bugs in rustc, collected from the GitHub issue tracker between January 1, 2022 and September 1, 2025. We analyze each issue in depth, focusing on its affected feature, symptom (how the feature is mishandled), consequence (the resulting undesirable behavior), triggering features, community consensus regarding whether it is a bug, and lifecycle, including introduction, discovery, and fix. Furthermore, we investigate existing artifacts, including implementations such as Miri, Chalk, and a-mir-formality, alongside documentation such as the Rust Reference, the FLS, and Rust RFCs to assess their potential as oracles for testing the type soundness of rustc. Our key findings indicate that: (1) Certain soundness bugs, typically triggered by implied bounds or trait objects, compromise memory safety. (2) Sound type checking is challenged by edge cases involving associated types and the interaction between lifetimes and traits. (3) Most bugs persist from the initial introduction of the relevant features and require significant time to be discovered. (4) While Miri can detect soundness bugs that lead to memory bugs, a-mir-formality and Chalk are currently immature despite their potential to identify other bug categories. (5) Existing documentation frequently fails to provide precise explanations of the language semantics.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/15-ryu-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://people.csail.mit.edu/bthom"><strong>Thomas Bourgeat:</strong></a> <em>A Simple Formal Path to Rust Inline Assembly Verification</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Inline assembly in systems software (firmware, hypervisors, kernels) is largely
+opaque to verification and bug finding tools. We explore an early-stage idea:
+translate inline RISC-V assembly into pure Rust by emulating each instruction
+using a machine model extracted from the official RISC-V Sail ISA specification.
+The resulting code can then be fed to standard Rust tools (Kani, MIRI, fuzzers)
+with no custom axiomatization of instruction semantics.This is ongoing
+exploratory work; we discuss open questions, challenges and limitations.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/16-bourgeat-slides.pdf">Slides</a></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_wednesday">Wednesday</h3>
+<div class="openblock unstyled talks">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Stephanie Balzer:</strong> <em>Semantic Typing for Possibilistic Noninterference</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Cryptographic primitives, such as encryption, decryption, and key generation, are vital to the security of many of today&#8217;s applications, but are difficult to reason about in an information-flow setting. In particular, they conflict with the notion of noninterference, the property that observable outputs are uninfluenced by secret inputs in an information-flow secure program. Not only do ciphertexts often rely on secure data (and thus would be ruled out in a typical information-flow setting), the use of nondeterminism in their generation may serve as a source of information-flow leak (called occlusion).  Logical relations are a technique which can be used to prescribe properties of a program based on its computational behavior, rather than relying on static well-formedness. Through this semantic approach, one can not only validate well-typed terms by showing their inhabitation in the logical relation (via the <code>fundamental theorem''), but also validate ill-typed terms which behave </code>correctly'' with respect to the definition of the logical relation.  This paper extends a version of the simply-typed lambda calculus with cryptographic primitives, and defines an information-flow control type system to statically enforce safe usage of said primitives. It then uses the technique of logical relations to define a semantic verification method for noninterference. In particular, to combat occlusion, it contributes a possibilistic logical relation, which considers the set of all possible values an expression could evaluate to.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/17-balzer-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://pauillac.inria.fr/~xleroy"><strong>Xavier Leroy:</strong></a> <em>Reasoning About One-shot Continuations</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>The call/1cc control operator (Bruggeman, Waddell and Dybvig, 1996) is a variant of call/cc (call-with-current-continuation) where the continuation can only be invoked once.  The unrestricted call/cc operator is notoriously difficult to reason about: the program logics that have been proposed for call/cc tend to be severely restricted.  In contrast, we show that call/1cc admits a simple reasoning rule in separation logic, compatible with the standard "let" and "frame" rules of separation logic, and somewhat similar to the Hoare logic rule for "goto" jumps.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/18-leroy-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://homepages.inf.ed.ac.uk/wadler"><strong>Philip Wadler:</strong></a> <em>Graduality, Parametricity, Interoperability: Together Again for the First Time</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>There has long been a tension between achieving three key properties
+of gradual typing typing. Graduality: as we upcast parts of a program
+it retains its semantics. Parametricity: polymorphic terms
+instantiated at related types have related semantics.
+Interoperability: functions at polymorphic type may upcast to dynamic
+type, and downcast vice-versa. We present the first system that
+satisfies all three. Interoperability is obvious from its formulation;
+we provide a direct proof of graduality; and we show parametricity by
+reduction to the systems of Ahmed et al (2017) and New et al
+(2019). We also introduce a number of technical innovations; in
+particular, we merge the casts and conversions of Ahmed et al (2017)
+into a single construct, eliminating annoying redundancies.</p>
+</div>
+<div class="paragraph">
+<p>Traditionally, the tension between graduality and parametricity arises
+because graduality demands we can upcast (∀X.X→X) to, say, (∀X.X→⋆),
+and its semantics must not change. Conversely, parametricity demands
+that (∀X.X→X) must be either the identity function or the function
+that never returns, while (∀X.X→⋆) must be a constant function. (Here
+⋆ is the dynamic type, also written ? in some work.) We resolve the
+problem by restricting casts, so that (∀X.X→X) may be cast to (⋆→⋆) or
+to ⋆, as required by interoperability, but not to (∀X.X→⋆).  Throwing
+out the latter loses little: the cast adds nothing to graduality
+precisely because it violates parametricity.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/19-wadler-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Simon Peyton Jones:</strong> <em>The Denotational Semantics of Verse</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>This talk describes ongoing work to define a denotational semantics for Verse.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/20-peyton-jones.pptx">Slides</a></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_thursday">Thursday</h3>
+<div class="openblock unstyled talks">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://diwww.epfl.ch/~odersky"><strong>Martin Odersky:</strong></a> <em>Securing Agents with Tracked Capabilities</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>AI agents that interact with the real world through tool calls pose fundamental safety challenges:
+agents might leak private information, cause unintended side effects, or be manipulated through
+prompt injection. To address these challenges, we propose to put the agent in a
+programming-language-based ``safety harness'': instead of calling tools directly, agents express
+their intentions as code in a capability-safe language: Scala 3 with capture checking. Capabilities
+are program variables that regulate access to effects and resources of interest.
+Scala&#8217;s type system tracks capabilities statically,
+providing fine-grained control over what an agent can do.
+In particular, it enables <em>local purity</em>, the ability to enforce that sub-computations are side-effect-free, preventing
+information leakage when agents process classified data. We demonstrate that extensible
+agent safety harnesses can be built by leveraging a strong type system with tracked capabilities.
+Our experiments show that agents can generate capability-safe code with no significant
+loss in task performance, while the type system reliably prevents unsafe behaviors such as
+information leakage and malicious side effects.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/21-odersky-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://pauillac.inria.fr/~remy"><strong>Didier Rémy:</strong></a> <em>Scoped Semi-unification for Efficient Omnidirectional ML Type Inference</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/22-remy-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://richarde.dev/"><strong>Richard Eisenberg:</strong></a> <em>Sorting the Kinds of Layouts</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>To address the performance hiccups around the pervasive indirection induced by uniform datatype representation, OxCaml utilizes kinds to classify unboxed values. Our needs for this feature (e.g. efficient interior pointers, arrays inlined into structures, and a few other representation hacks) pose interesting design questions. The proposed system distinguishes between regular types that support efficient pointers vs arrays and other irregular types that can be inlined directly into structures.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/23-eisenberg-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://cs.uchicago.edu/~jhr"><strong>John Reppy:</strong></a> <em>Range-Analysis for Optimizing ML</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Standard ML is a "safe" language, which helps improve the security and robustness
+of code, but at the cost of additional runtime checks.  Two examples of such checks
+are tests for overflow on arithmetic operations and tests for invalid indices
+into arrays and vectors.  In this paper, we describe ongoing work in the Standard
+ML of New Jersey compiler to reduce the overhead of such tests without reducing
+the safety of the language.  Our approach is based on applying a <strong>range analysis</strong>
+to SML/NJ&#8217;s CPS intermediate representation, which is used to eliminate overflow
+checking and bounds checking when it is sound to do so.  While bounds-check elimination
+is well-known, the use of range analysis to eliminate overflow tests is less common.
+Some preliminary experiments with by-hand application of these optimizations
+suggest that the performance benefits can be significant for array-heavy code.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/24-reppy-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.cs.cmu.edu/~rwh"><strong>Robert Harper:</strong></a> <em>Compositional Verification of Cost and Behavior</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>The Calf type theory is extended with a new phase distinction and associated modalities to provide a synthetic account of modular program development that mediates between a client, which is provided with a simple specification of the intended cost and behavior of an algorithm, and an implementor, which provides an efficient implementation and a Hoare-inspired abstraction function that witnesses its compliance with the specification.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/25-harper-slides.pdf">Slides</a>, <a href="https://calfproject.github.io/">GitHub repository</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.ccs.neu.edu/home/amal"><strong>Amal Ahmed:</strong></a> <em>From Linearity to Borrowing (to maybe something Rusty)</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>In this talk, I&#8217;ll present the Borrow Calculus, which aims to elucidate the semantics of borrowing, by starting with a standard linear type system for ensuring safe manual memory management in an untyped lambda calculus and gradually augmenting it with immutable borrows, lexical lifetimes, mutable borrows, and reborrowing. We prove semantic type soundness for our Borrow Calculus (BoCa) using Borrow Logic (BoLo), a novel domain-specific separation logic for borrowing. We have proved the soundness of this logic using a semantic model that additionally guarantees that our calculus is terminating and free of memory leaks. Our Borrow Logic is robust enough to establish the semantic safety of some syntactically ill-typed programs that temporarily break but reestablish invariants.  I&#8217;ll also discuss changes we are making to this Borrow Calculus to make it more Rusty, such as addition of raw pointers, adopting a lower-level CompCert-style memory model, and support for the "impl" and "dyn" function traits. We hope these changes will allow us to elaborate a subset of Rust programs into our calculus, allowing it to serve as a formal model of close-to-surface-level Rust.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/26-ahmed-slides.pdf">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.cse.chalmers.se/~ulfn"><strong>Ulf Norell:</strong></a> <em>Provably correct protocol trace verification</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>The talk is about my experience testing the implementations of a consensus protocol against a formal model in Agda. We have the implementation produce traces that are validated against the model by a sound and complete trace verifier, essentially providing a formally verified test oracle. I found this to be a nice sweet spot in the program verification spectrum, between full formal verification and pure testing.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/27-norell-slides.pptx">Slides</a></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_friday">Friday</h3>
+<div class="openblock unstyled talks">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://people.cs.uchicago.edu/~dbm"><strong>David MacQueen:</strong></a> <em>MsML: MacQueen&#8217;s Own Version of Successor ML</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Talk at IFIP WG 2.8 2026 Meeting in Viana do Castelo, Portugal</p>
+</div>
+<div class="paragraph">
+<p>Title: MsML: MacQueen&#8217;s own version of successor ML</p>
+</div>
+<div class="paragraph">
+<p>Speaker: David MacQueen, University of Chicago, Computer Science, Emeritus</p>
+</div>
+<div class="paragraph">
+<p>Abstract:</p>
+</div>
+<div class="paragraph">
+<p>This talk presents a sketch and brief rationale for a modest revision of Standard ML called MsML, which stands for "MacQueen&#8217;s own version of successor ML".  A more complete version of the proposed changes can be found in the file language/msml.txt in the GitHub repository at <a href="https://github.com/dmacqueen/NewFrontEnd" class="bare">https://github.com/dmacqueen/NewFrontEnd</a>.  The changes in MsML are mostly subtractive, so although MsML does not maintain backward compatibility with Standard ML, it is estimated that updating SML code to MsML will only require moderate effort.  This language revision arises from another project, called "New Front End", whose goal is to implement a new front end for the SML/NJ compiler.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/28-macqueen-slides.pptx">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Andrew Kennedy:</strong> <em>Types Work!</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/29-kennedy-slides.pptx">Slides</a></p>
+</div>
+</li>
+<li>
+<p><strong>Simon Marlow:</strong> <em>Glean – Query your Code</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Glean is a code-indexing system built by Meta to support a wide range of use cases, from powering IDE features on codebases with millions of source files to tracking the impact of API changes on large codebases. Underlying Glean is a query language based on Datalog; in this talk I walk through some of the aspects of this language and demonstrate how it can be used to query features of source code, and also give a simple semantics for a fragment of the language.</p>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p><a href="https://wg28.cs.uchicago.edu/44-viana-do-castelo-2026/30-marlow-slides.pptx">Slides</a></p>
+</div>
+</li>
+<li>
+<p><a href="https://www.cis.upenn.edu/~stevez"><strong>Steve Zdancewic:</strong></a> <em>Proving Existentials with Coinduction</em></p>
+<details>
+<summary class="title"><strong>Abstract</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>Proving theorems of the form <code>forall (x:X), Q x &#8594; exists y:Y, P x y</code> where the types <code>X</code>, <code>Y</code>
+and the predicates <code>Q</code> and <code>P</code> are all <strong>coinductively</strong> defined can be surprisingly
+tricky in a theorem prover based on dependent type theory.  This talk explains
+why and, by example, gives a recipe that can be used to prove such propositions.
+The key idea is to use a "proof-carrying" version of the coinductive type&#8217;s
+"unfold" function.</p>
+</div>
+<div class="paragraph">
+<p>The AI-based theorem prover aristotle.harmonic.fun and claude code were both
+able to generate similar solutions, automatically.</p>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p><strong>Lennart Augustsson:</strong> <em>Simon cont&#8217;d</em></p>
+<div class="paragraph">
+<p><strong>No Abstract</strong></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+      </div> <!-- content -->
+    </div> <!-- layout-content-box -->
+    <div id="layout-footer-box">
+      <div id="layout-footer">
+	<div id="layout-footer-text">
+	  <strong>IFIP WG2.8 on Functional Programming</strong><br />
+	  Last updated 2026-07-28 12:40:37 UTC
+	</div> <!-- layout-footer-text -->
+      </div> <!-- layout-footer -->
+    </div> <!-- layout-footer-box -->
+  </div> <!-- layout-main -->
+</body>
+</html>
